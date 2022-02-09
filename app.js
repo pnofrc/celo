@@ -1,35 +1,64 @@
 $(window).load(function() {
 
-    // var data = [
+    let saturn = document.getElementById("saturn");
 
-    // ]
+    saturn.addEventListener("click", function() {
+        alert()
+    })
 
-    // data.forEach(film => {
-    //     $("#data").innerHTML += `<a class="${}" title="${}" href="#${}speed"><i>Bio</i></a>`
-    //     $("#solar-system").innerHTML += `
+    if (localStorage.lenght === 0) {
+        localStorage.setItem('theme') == 'light'
+    } else if (localStorage.getItem('theme') == 'dark') {
+        document.body.style.setProperty('--background', 'black');
+        document.body.style.setProperty('--orbits', 'rgb(123, 0, 255)');
+        document.body.style.setProperty('--selectedOrbit', 'violet');
+        document.body.style.setProperty('--sun', 'magenta');
+        document.body.style.setProperty('--toggle', 'white');
+        document.body.style.setProperty('--shadow', 'rgba(0, 0, 0, 0.514)');
+        localStorage.setItem('theme', 'dark')
+        console.log("dark mode")
+    }
 
-    //     <div id="${}" class="orbit">
-    //     <div class="pos">
-    //         <div class="planet">
-    //             <dl class="infos">
-    //                 <dt>${}</dt>
-    //                 <dd><span></span></dd>
-    //             </dl>
-    //         </div>
-    //     </div>
-    // </div>
-    // `
 
-    // `#${} .pos {
-    //     left: 0;
-    //     top: 50%;
-    // }`
-    // });
+    let toggle = document.getElementById("toggle");
+    toggle.addEventListener("click", function() {
+
+        if (localStorage.getItem('theme') == 'light') {
+
+            document.body.style.setProperty('--background', 'black');
+            document.body.style.setProperty('--orbits', 'rgb(123, 0, 255)');
+            document.body.style.setProperty('--selectedOrbit', 'violet');
+            document.body.style.setProperty('--sun', 'magenta');
+            document.body.style.setProperty('--toggle', 'white');
+            document.body.style.setProperty('--shadow', 'rgba(0, 0, 0, 0.514)');
+
+            localStorage.setItem('theme', 'dark')
+            console.log("dark mode")
+                //document.body.style.setProperty('--active', '#YOURCOLOR');
+                //document.body.style.setProperty('--controls', '#YOURCOLOR');
+        } else {
+            document.body.style.setProperty('--background', 'white');
+            document.body.style.setProperty('--orbits', 'rgb(255,136,0)');
+            document.body.style.setProperty('--selectedOrbit', 'rgb(255,0,0)');
+            document.body.style.setProperty('--sun', 'rgb(255,255,0)');
+            document.body.style.setProperty('--toggle', 'black');
+            document.body.style.setProperty('--shadow', 'rgba(255,255,255, 0.514)');
+
+            //document.body.style.setProperty('--active', '#YOURCOLOR');
+            //document.body.style.setProperty('--controls', '#YOURCOLOR');
+            localStorage.setItem('theme', 'light')
+            console.log("light mode")
+        }
+    })
+
+
+
 
 
     var body = $("body"),
         universe = $("#universe"),
         solarsys = $("#solar-system");
+
 
     var init = function() {
         body.removeClass('view-2D opening').addClass("view-3D").delay(2000).queue(function() {
