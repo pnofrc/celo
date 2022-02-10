@@ -13,6 +13,7 @@ $(window).load(function() {
     array.forEach(element => {
         element.addEventListener("click", function() {
             // alert()
+            document.querySelector("iframe").src = 'https://player.vimeo.com/video/669113967?h=029ed1d7b4'
             $("#player").fadeIn(2000)
             $("#antiplayer").fadeIn(2000)
         })
