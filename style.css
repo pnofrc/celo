@@ -26,21 +26,6 @@ body {
     padding: 0;
 }
 
-
-/* article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-    display: block;
-} */
-
 body {
     line-height: 1;
 }
@@ -71,6 +56,7 @@ table {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     box-sizing: border-box;
+    display: block;
 }
 
 body {
@@ -81,11 +67,12 @@ body {
 }
 
 #hello {
-    /* border: solid; */
     margin: 20px;
     position: absolute;
     top: 0;
     font-size: 50px;
+    color: var(--background);
+    filter: invert();
 }
 
 #comet img {
@@ -195,6 +182,10 @@ body {
     }
 }
 
+.invert {
+    filter: invert()
+}
+
 #controls {
     width: 5%;
 }
@@ -204,7 +195,7 @@ body {
 }
 
 #player {
-    border: solid;
+    /* border: solid; */
     display: none;
     position: fixed;
     width: 90%;
@@ -212,6 +203,12 @@ body {
     height: 80%;
     margin-top: 5%;
     z-index: 100;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    /* border: solid 3px var(--orbits); */
 }
 
 #closePlayer {
@@ -231,14 +228,11 @@ body {
 #antiplayer {
     display: none;
     border: solid;
-    /* display: inline; */
     position: fixed;
     width: 100%;
     height: 100%;
     z-index: 100;
-    /* background-color: red; */
     background-color: var(--playerOn);
-    /* filter: blur(300); */
 }
 
 #universe {
@@ -612,54 +606,54 @@ body {
 #mercury .pos,
 #mercury .planet,
 #mercury.orbit {
-    animation-duration: 150.89016s;
+    animation-duration: 250.89016s;
 }
 
 #venus .pos,
 #venus .planet,
 #venus.orbit {
-    animation-duration: 160.38237s;
+    animation-duration: 260.38237s;
 }
 
 #earth .pos,
 #earth .planet,
 #earth.orbit {
-    animation-duration: 171.00021s;
+    animation-duration: 271.00021s;
 }
 
 #earth .orbit .pos,
 #earth .orbit {
-    animation-duration: 183.89764s;
+    animation-duration: 283.89764s;
 }
 
 #mars .pos,
 #mars .planet,
 #mars.orbit {
-    animation-duration: 192.57017s;
+    animation-duration: 292.57017s;
 }
 
 #jupiter .pos,
 #jupiter .planet,
 #jupiter.orbit {
-    animation-duration: 204.35138s;
+    animation-duration: 304.35138s;
 }
 
 #saturn .pos,
 #saturn .planet,
 #saturn.orbit {
-    animation-duration: 235.36998s;
+    animation-duration: 335.36998s;
 }
 
 #uranus .pos,
 #uranus .planet,
 #uranus.orbit {
-    animation-duration: 200.20215s;
+    animation-duration: 350.20215s;
 }
 
 #neptune .pos,
 #neptune .planet,
 #neptune.orbit {
-    animation-duration: 297.49584s;
+    animation-duration: 487.49584s;
 }
 
 
