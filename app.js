@@ -1,10 +1,38 @@
 $(window).load(function() {
 
-    let saturn = document.getElementById("saturn");
+    // let saturn = document.getElementById("saturn");
 
-    saturn.addEventListener("click", function() {
-        alert()
+    // saturn.addEventListener("click", function() {
+    //     $("#player").fadeIn()
+    //     $("#antiplayer").fadeIn()
+    // })
+
+    let array = document.querySelectorAll(".planet");
+    console.log(array)
+
+    array.forEach(element => {
+        element.addEventListener("click", function() {
+            // alert()
+            $("#player").fadeIn(2000)
+            $("#antiplayer").fadeIn(2000)
+        })
+    });
+
+    document.getElementById("closePlayer").addEventListener('click', function() {
+        $("#player").fadeOut(1000)
+        $("#antiplayer").fadeOut(1000)
+            // document.getElementById("antiplayer").setProperty('--playerOn', 'transparent')
     })
+
+
+    let blackHole = document.getElementById("blackhole");
+
+    blackHole.addEventListener("click", function() {
+        alert("Tutti gli altri video qua")
+    })
+
+    $("#blackhole img").delay(3000).fadeIn(3000)
+    $("#comet img").delay(3000).fadeIn(3000)
 
     if (localStorage.lenght === 0) {
         localStorage.setItem('theme') == 'light'
@@ -14,7 +42,10 @@ $(window).load(function() {
         document.body.style.setProperty('--selectedOrbit', 'violet');
         document.body.style.setProperty('--sun', 'magenta');
         document.body.style.setProperty('--toggle', 'white');
-        document.body.style.setProperty('--shadow', 'rgba(0, 0, 0, 0.514)');
+        document.body.style.setProperty('--shadow', 'rgba(255, 255, 255, 0.514)');
+        document.body.style.setProperty(' --playerOn', 'rgba(255, 255, 255, 0.3)');
+
+
         localStorage.setItem('theme', 'dark')
         console.log("dark mode")
     }
@@ -30,7 +61,9 @@ $(window).load(function() {
             document.body.style.setProperty('--selectedOrbit', 'violet');
             document.body.style.setProperty('--sun', 'magenta');
             document.body.style.setProperty('--toggle', 'white');
-            document.body.style.setProperty('--shadow', 'rgba(0, 0, 0, 0.514)');
+            document.body.style.setProperty('--shadow', 'rgba(255,255,255, 0.514)');
+            document.body.style.setProperty(' --playerOn', 'rgba(255,255,255, 0.3)');
+
 
             localStorage.setItem('theme', 'dark')
             console.log("dark mode")
@@ -42,7 +75,9 @@ $(window).load(function() {
             document.body.style.setProperty('--selectedOrbit', 'rgb(255,0,0)');
             document.body.style.setProperty('--sun', 'rgb(255,255,0)');
             document.body.style.setProperty('--toggle', 'black');
-            document.body.style.setProperty('--shadow', 'rgba(255,255,255, 0.514)');
+            document.body.style.setProperty('--shadow', 'rgba(0,0,0, 0.514)');
+            document.body.style.setProperty(' --playerOn', 'rgba(0,0,0, 0.3)');
+
 
             //document.body.style.setProperty('--active', '#YOURCOLOR');
             //document.body.style.setProperty('--controls', '#YOURCOLOR');
