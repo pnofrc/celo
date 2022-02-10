@@ -9,11 +9,12 @@ if (localStorage.lenght === 0) {
     document.body.style.setProperty('--sun', 'magenta');
     document.body.style.setProperty('--toggle', 'white');
     document.body.style.setProperty('--shadow', 'rgba(255, 255, 255, 0.514)');
-    document.body.style.setProperty(' --playerOn', 'rgba(255, 255, 255, 0.3)');
+    document.body.style.setProperty('--playerOn', 'rgba(255, 255, 255, 0.3)');
+
+    document.body.style.setProperty('--invert', '0');
     localStorage.setItem('theme', 'dark')
     console.log("dark mode")
-    document.getElementById("cometImg").classList.remove('invert');
-    document.getElementById("blackholeImg").classList.remove('invert');
+
 }
 
 
@@ -29,8 +30,8 @@ toggle.addEventListener("click", function() {
         document.body.style.setProperty('--toggle', 'white');
         document.body.style.setProperty('--shadow', 'rgba(255,255,255, 0.514)');
         document.body.style.setProperty(' --playerOn', 'rgba(255,255,255, 0.3)');
-        document.getElementById("cometImg").classList.remove('invert');
-        document.getElementById("blackholeImg").classList.remove('invert');
+        document.body.style.setProperty('--invert', '0');
+
 
 
         localStorage.setItem('theme', 'dark')
@@ -44,9 +45,7 @@ toggle.addEventListener("click", function() {
         document.body.style.setProperty('--toggle', 'black');
         document.body.style.setProperty('--shadow', 'rgba(0,0,0, 0.514)');
         document.body.style.setProperty(' --playerOn', 'rgba(0,0,0, 0.3)');
-        document.getElementById("cometImg").classList.add('invert');
-        document.getElementById("blackholeImg").classList.add('invert');
-
+        document.body.style.setProperty('--invert', '1');
 
         localStorage.setItem('theme', 'light')
         console.log("light mode")
