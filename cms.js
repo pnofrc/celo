@@ -73,6 +73,23 @@ array.forEach(element => {
     })
 });
 
+document.getElementById("antiplayer").addEventListener("click", function() {
+    console.log('hb n')
+
+    // document.getElementById("closePlayer").addEventListener('click', function() {
+    $("#player").fadeOut()
+    $("#antiplayer").fadeOut()
+    document.querySelector("iframe").src = '';
+
+
+    document.getAnimations().forEach(
+        function(animation) {
+            animation.playbackRate = 1;
+        }
+    );
+})
+
+
 document.getElementById("closePlayer").addEventListener('click', function() {
     $("#player").fadeOut()
     $("#antiplayer").fadeOut()
