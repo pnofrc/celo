@@ -14,7 +14,7 @@ $(window).load(function() {
         });
     };
 
-    var setView = function(view) { universe.removeClass().addClass(view); };
+    // var setView = function(view) { universe.removeClass().addClass(view); };
 
     $("#toggle-data").click(function(e) {
         body.toggleClass("data-open data-close");
@@ -27,20 +27,47 @@ $(window).load(function() {
     });
 
     $("#data a").click(function(e) {
-        // alert()
         var ref = $(this).attr("class");
-        solarsys.removeClass().addClass(ref);
-        $(this).parent().find('a').removeClass('active');
-        $(this).addClass('active');
+        var current = document.getElementsByClassName(ref)[0].title
+        if (document.getElementsByClassName(ref)[0].classList[1] == 'active') {
+            document.querySelector("iframe").src = assets[current][1];
+            $("#player").fadeIn()
+            $("#antiplayer").fadeIn()
+
+            document.getAnimations().forEach(
+                function(animation) {
+                    animation.playbackRate = 0;
+                });
+        } else {
+            solarsys.removeClass().addClass(ref);
+            $(this).parent().find('a').removeClass('active');
+            $(this).addClass('active');
+        }
         e.preventDefault();
     });
 
-    $(".set-view").click(function() { body.toggleClass("view-3D view-2D"); });
-    $(".set-zoom").click(function() { body.toggleClass("zoom-large zoom-close"); });
-    $(".set-speed").click(function() { setView("scale-stretched set-speed"); });
-    $(".set-size").click(function() { setView("scale-s set-size"); });
-    $(".set-distance").click(function() { setView("scale-d set-distance"); });
+    $(".orbit").click(function(e) {
 
+        var ref = $(this).attr("id");
+        var current = document.getElementsByClassName(ref)[0].title
+        if (document.getElementsByClassName(ref)[0].classList[1] == 'active') {
+            document.querySelector("iframe").src = assets[current][1];
+            $("#player").fadeIn()
+            $("#antiplayer").fadeIn()
+
+            document.getAnimations().forEach(
+                function(animation) {
+                    animation.playbackRate = 0;
+                });
+        } else {
+            $("#data a").removeClass('active')
+            solarsys.removeClass().addClass(ref);
+            document.getElementsByClassName(ref)[0].classList.add('active')
+        }
+        e.preventDefault();
+    });
+
+    $(".set-zoom").click(function() { body.toggleClass("zoom-large zoom-close"); });
     init();
 
 });

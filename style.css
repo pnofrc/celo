@@ -68,12 +68,18 @@ body {
 }
 
 #hello {
-    margin: 20px;
+    margin: 45px;
     position: absolute;
     top: 0;
-    font-size: 50px;
+    font-size: 28px;
     color: var(--background);
     filter: invert();
+}
+
+#hello i {
+    line-height: 30px;
+    font-size: 20px;
+    text-align: right;
 }
 
 #comet img {
@@ -157,12 +163,14 @@ body {
     /* z-index: -1; */
 }
 
-#blackhole img:hover {
+#blackhole img:hover,
+#sun:hover,
+.planet:hover {
     cursor: pointer;
 }
 
-.planet:hover {
-    cursor: pointer;
+#sun .infos:hover {
+    cursor: alias;
 }
 
 @-webkit-keyframes blackhole {

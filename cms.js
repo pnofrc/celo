@@ -42,45 +42,54 @@ var assets = [
     [
         ['Bio'],
         ['https://player.vimeo.com/video/669113967?h=029ed1d7b4'],
-        ['description']
+        ['Ciao sono celo<br>E mi piacciono le barchette']
     ]
+
 ]
 
+
 let titles = document.querySelectorAll("#data a");
+
 titles.forEach(el => {
     let currentTit = el.title;
-    // console.log(currentTit)
     el.innerHTML = assets[currentTit][0]
-    console.log()
-
 });
 
 
-let array = document.querySelectorAll(".planet");
-array.forEach(element => {
-    element.addEventListener("click", function() {
+let descriptions = document.querySelectorAll("dd span");
 
-        let current = element.title;
-        document.querySelector("iframe").src = assets[current][1];
-        $("#player").fadeIn()
-        $("#antiplayer").fadeIn()
-
-        document.getAnimations().forEach(
-            function(animation) {
-                animation.playbackRate = 0;
-            });
-
-    })
+descriptions.forEach(des => {
+    let currentTit = des.title;
+    des.innerHTML = assets[currentTit][2]
 });
+
+
+
+
+// let array = document.querySelectorAll(".planet");
+// array.forEach(element => {
+//     element.addEventListener("click", function() {
+
+//         let current = element.title.substr(1);
+//         console.log(current)
+//         document.querySelector("iframe").src = assets[current][1];
+//         $("#player").fadeIn()
+//         $("#antiplayer").fadeIn()
+
+//         document.getAnimations().forEach(
+//             function(animation) {
+//                 animation.playbackRate = 0;
+//             });
+
+//     })
+// });
 
 document.getElementById("antiplayer").addEventListener("click", function() {
-    console.log('hb n')
 
     // document.getElementById("closePlayer").addEventListener('click', function() {
     $("#player").fadeOut()
     $("#antiplayer").fadeOut()
     document.querySelector("iframe").src = '';
-
 
     document.getAnimations().forEach(
         function(animation) {
@@ -105,4 +114,9 @@ document.getElementById("closePlayer").addEventListener('click', function() {
 
 document.getElementById("blackhole").addEventListener("click", function() {
     alert("Tutti gli altri video qua")
+})
+
+
+document.querySelector('#sun').addEventListener('click', function() {
+    window.open("https://www.instagram.com/celo", "_blank")
 })

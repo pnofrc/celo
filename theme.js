@@ -1,4 +1,5 @@
 if (localStorage.lenght === 0) {
+    alert('click everything :)')
     localStorage.setItem('theme') == 'light'
     document.getElementById("cometImg").classList.add('invert');
     document.getElementById("blackholeImg").classList.add('invert');
