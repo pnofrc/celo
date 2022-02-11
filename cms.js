@@ -48,20 +48,7 @@ var assets = [
 ]
 
 
-let titles = document.querySelectorAll("#data a");
 
-titles.forEach(el => {
-    let currentTit = el.title;
-    el.innerHTML = assets[currentTit][0]
-});
-
-
-let descriptions = document.querySelectorAll("dd span");
-
-descriptions.forEach(des => {
-    let currentTit = des.title;
-    des.innerHTML = assets[currentTit][2]
-});
 
 
 
@@ -83,40 +70,3 @@ descriptions.forEach(des => {
 
 //     })
 // });
-
-document.getElementById("antiplayer").addEventListener("click", function() {
-
-    // document.getElementById("closePlayer").addEventListener('click', function() {
-    $("#player").fadeOut()
-    $("#antiplayer").fadeOut()
-    document.querySelector("iframe").src = '';
-
-    document.getAnimations().forEach(
-        function(animation) {
-            animation.playbackRate = 1;
-        }
-    );
-})
-
-
-document.getElementById("closePlayer").addEventListener('click', function() {
-    $("#player").fadeOut()
-    $("#antiplayer").fadeOut()
-    document.querySelector("iframe").src = '';
-
-
-    document.getAnimations().forEach(
-        function(animation) {
-            animation.playbackRate = 1;
-        }
-    );
-})
-
-document.getElementById("blackhole").addEventListener("click", function() {
-    alert("Tutti gli altri video qua")
-})
-
-
-document.querySelector('#sun').addEventListener('click', function() {
-    window.open("https://www.instagram.com/celo", "_blank")
-})

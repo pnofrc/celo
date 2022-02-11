@@ -173,6 +173,10 @@ body {
     cursor: alias;
 }
 
+.sun {
+    font-style: italic;
+}
+
 @-webkit-keyframes blackhole {
     from {
         transform: rotate(0);

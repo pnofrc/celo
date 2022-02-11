@@ -2,13 +2,65 @@ $(window).load(function() {
     $("#blackhole img").delay(3000).fadeIn(3000)
     $("#comet img").delay(3000).fadeIn(3000)
 
+    let titles = document.querySelectorAll("#data a");
+
+    titles.forEach(el => {
+        let currentTit = el.title;
+        el.innerHTML = assets[currentTit][0]
+    });
+
+
+    let descriptions = document.querySelectorAll("dd span");
+
+    descriptions.forEach(des => {
+        let currentTit = des.title;
+        des.innerHTML = assets[currentTit][2]
+    });
+
+    document.getElementById("antiplayer").addEventListener("click", function() {
+
+        // document.getElementById("closePlayer").addEventListener('click', function() {
+        $("#player").fadeOut()
+        $("#antiplayer").fadeOut()
+        document.querySelector("iframe").src = '';
+
+        document.getAnimations().forEach(
+            function(animation) {
+                animation.playbackRate = 1;
+            }
+        );
+    })
+
+
+    document.getElementById("closePlayer").addEventListener('click', function() {
+        $("#player").fadeOut()
+        $("#antiplayer").fadeOut()
+        document.querySelector("iframe").src = '';
+
+
+        document.getAnimations().forEach(
+            function(animation) {
+                animation.playbackRate = 1;
+            }
+        );
+    })
+
+    document.getElementById("blackhole").addEventListener("click", function() {
+        alert("Tutti gli altri video qua")
+    })
+
+
+    document.querySelector('#sun').addEventListener('click', function() {
+        window.open("https://www.instagram.com/celo", "_blank")
+    })
+
     var body = $("body"),
-        universe = $("#universe"),
+        // universe = $("#universe"),
         solarsys = $("#solar-system");
 
 
     var init = function() {
-        body.removeClass('view-2D opening').addClass("view-3D").delay(2000).queue(function() {
+        body.removeClass('view-2D opening').addClass("view-3D").delay(1000).queue(function() {
             $(this).removeClass('hide-UI').addClass("set-speed");
             $(this).dequeue();
         });
@@ -33,7 +85,6 @@ $(window).load(function() {
             document.querySelector("iframe").src = assets[current][1];
             $("#player").fadeIn()
             $("#antiplayer").fadeIn()
-
             document.getAnimations().forEach(
                 function(animation) {
                     animation.playbackRate = 0;
@@ -47,14 +98,12 @@ $(window).load(function() {
     });
 
     $(".orbit").click(function(e) {
-
         var ref = $(this).attr("id");
         var current = document.getElementsByClassName(ref)[0].title
         if (document.getElementsByClassName(ref)[0].classList[1] == 'active') {
             document.querySelector("iframe").src = assets[current][1];
             $("#player").fadeIn()
             $("#antiplayer").fadeIn()
-
             document.getAnimations().forEach(
                 function(animation) {
                     animation.playbackRate = 0;
@@ -69,5 +118,4 @@ $(window).load(function() {
 
     $(".set-zoom").click(function() { body.toggleClass("zoom-large zoom-close"); });
     init();
-
 });
