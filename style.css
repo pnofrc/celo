@@ -152,16 +152,21 @@ body {
 #blackhole img {
     display: none;
     position: absolute;
-    max-width: 13%;
+    max-width: 15%;
     z-index: 20;
-    bottom: 15%;
-    left: 10%;
-    filter: invert(var(--invert)) drop-shadow(0 1rem 0.75rem var(--shadow));
+    bottom: 8%;
+    left: 5%;
+    filter: invert(var(--invert)) drop-shadow(0 1rem 0.75rem var(--shadow)) blur(2px);
     -webkit-animation: blackhole 2s linear infinite;
     /* Safari */
-    animation: blackhole 200s linear infinite;
+    animation: blackhole 100s linear infinite;
     animation-delay: 3s;
     /* z-index: -1; */
+    /* filter: blur(2px); */
+}
+
+#blackhole img:hover {
+    filter: invert(var(--invert)) drop-shadow(0 1rem 0.75rem var(--shadow));
 }
 
 #blackhole img:hover,
@@ -181,9 +186,11 @@ body {
 @-webkit-keyframes blackhole {
     from {
         transform: rotate(0);
+        max-width: 18%;
     }
     to {
         transform: rotate(360deg);
+        max-width: 13%;
     }
 }
 
@@ -1724,6 +1731,7 @@ h1 span,
 
 #data a.active {
     color: var(--controls);
+    border: solid 3px var(--controls)
 }
 
 #navbar a {
@@ -1802,11 +1810,19 @@ h1 span,
     color: var(--controls);
 }
 
-#controls input {
-    display: block;
-    appearance: none;
+.set-zoom button {
+    width: 120%;
+    height: 120%;
 }
 
+
+/* #controls input {
+    display: block;
+    appearance: none;
+} */
+
+
+/* 
 #controls input[type="radio"]:before {
     content: '';
     display: block;
@@ -1828,8 +1844,10 @@ h1 span,
     border-radius: 10px;
     background: var(--controls);
     z-index: 99;
-}
+} */
 
+
+/* 
 #controls input[type="checkbox"]:before {
     content: '';
     display: block;
@@ -1850,11 +1868,12 @@ h1 span,
     border-radius: 10px;
     background: var(--controls);
     z-index: 99;
-}
+} */
 
-#controls label.set-view:before {
+
+/* #controls label.set-view:before {
     font: bold small-caps 11px/20px sans-serif;
-}
+} */
 
 
 /* .view-3D #controls label.set-view:before {
@@ -1877,6 +1896,8 @@ h1 span,
     margin-left: 81px;
 } */
 
+
+/* 
 #controls label.set-zoom:before {
     font: normal small-caps 18px/14px sans-serif;
 }
@@ -1897,7 +1918,7 @@ h1 span,
 
 .zoom-close #controls .set-zoom input:after {
     margin-left: 81px;
-}
+} */
 
 
 /* --------------------------------------------------------------------------- transitions */
@@ -2061,11 +2082,14 @@ h1 {
 
 @media screen and (min-width: 1300px) {
     #universe {
-        font-size: 100%;
+        font-size: 75%;
     }
 }
 
 @media screen and (min-width: 1600px) {
+    #universe {
+        font-size: 90%;
+    }
     .zoom-close .scale-d #solar-system {
         margin-left: -120%;
     }

@@ -1,21 +1,23 @@
 $(window).load(function() {
-    $("#blackhole img").delay(3000).fadeIn(3000)
-    $("#comet img").delay(3000).fadeIn(3000)
 
-    let titles = document.querySelectorAll("#data a");
+    let hash = $(location).attr('hash').split('#').pop();
 
-    titles.forEach(el => {
-        let currentTit = el.title;
-        el.innerHTML = assets[currentTit][0]
-    });
+    if (hash) {
+        document.querySelector("iframe").src = assets[hash]['link'];
+        $("#player").fadeIn()
+        $("#antiplayer").fadeIn()
 
+    }
+    setTimeout(function() {
+        document.getAnimations().forEach(
+            function(animation) {
+                animation.playbackRate = 0;
+            });
+    }, 3000)
 
-    let descriptions = document.querySelectorAll("dd span");
+    $("#blackhole img").delay(2000).fadeIn(3000)
+    $("#comet img").delay(2000).fadeIn(3000)
 
-    descriptions.forEach(des => {
-        let currentTit = des.title;
-        des.innerHTML = assets[currentTit][2]
-    });
 
     document.getElementById("antiplayer").addEventListener("click", function() {
 
@@ -51,7 +53,7 @@ $(window).load(function() {
 
 
     document.querySelector('#sun').addEventListener('click', function() {
-        window.open("https://www.instagram.com/celo", "_blank")
+        window.open("https://www.instagram.com/marco.celotti", "_blank")
     })
 
     var body = $("body"),
@@ -78,13 +80,37 @@ $(window).load(function() {
         e.preventDefault();
     });
 
+
+    let titles = document.querySelectorAll("#data a");
+    let descriptions = document.querySelectorAll("dd span");
+    let planets = document.querySelectorAll("planet");
+
+    let x = 0
+
+    Object.keys(assets).forEach(key => {
+
+        titles[x].innerHTML = assets[key]['title'];
+        descriptions[x].innerHTML = assets[key]['description'];
+        titles[x].title = key
+        descriptions[x].title = key
+            // planets[x].title = key
+        x++
+    });
+
+
+
+
+    var baseUrl = 'http://pnofrc.github.io/celo/#'
+
     $("#data a").click(function(e) {
         var ref = $(this).attr("class");
         var current = document.getElementsByClassName(ref)[0].title
+        var url = baseUrl + current
         if (document.getElementsByClassName(ref)[0].classList[1] == 'active') {
-            document.querySelector("iframe").src = assets[current][1];
+            document.querySelector("iframe").src = assets[current]['link'];
             $("#player").fadeIn()
             $("#antiplayer").fadeIn()
+            window.location.replace(url);
             document.getAnimations().forEach(
                 function(animation) {
                     animation.playbackRate = 0;
@@ -97,13 +123,17 @@ $(window).load(function() {
         e.preventDefault();
     });
 
+
+
     $(".orbit").click(function(e) {
         var ref = $(this).attr("id");
         var current = document.getElementsByClassName(ref)[0].title
+        var url = baseUrl + current
         if (document.getElementsByClassName(ref)[0].classList[1] == 'active') {
-            document.querySelector("iframe").src = assets[current][1];
+            document.querySelector("iframe").src = assets[current]['link'];
             $("#player").fadeIn()
             $("#antiplayer").fadeIn()
+            window.location.replace(url);
             document.getAnimations().forEach(
                 function(animation) {
                     animation.playbackRate = 0;
