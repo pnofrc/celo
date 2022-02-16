@@ -7,13 +7,14 @@ $(window).load(function() {
         $("#player").fadeIn()
         $("#antiplayer").fadeIn()
 
+
+        setTimeout(function() {
+            document.getAnimations().forEach(
+                function(animation) {
+                    animation.playbackRate = 0;
+                });
+        }, 3000)
     }
-    setTimeout(function() {
-        document.getAnimations().forEach(
-            function(animation) {
-                animation.playbackRate = 0;
-            });
-    }, 3000)
 
     $("#blackhole img").delay(2000).fadeIn(3000)
     $("#comet img").delay(2000).fadeIn(3000)
