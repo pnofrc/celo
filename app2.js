@@ -1,5 +1,9 @@
 $(window).load(function() {
 
+    if (window.innerHeight > window.innerWidth) {
+        alert("Please use Landscape!");
+    }
+
     // $("#playerSrc").on("load", function() {
     //     let head = $("#playerSrc").contents().find("head");
     //     let css = '<style>.headers{display:none}</style>';
