@@ -20,33 +20,35 @@ $(window).load(function() {
     $("#comet img").delay(2000).fadeIn(3000)
 
 
-    document.getElementById("antiplayer").addEventListener("click", function() {
+    // document.getElementById("antiplayer").addEventListener("click", function() {
 
-        // document.getElementById("closePlayer").addEventListener('click', function() {
-        $("#player").fadeOut()
-        $("#antiplayer").fadeOut()
-        document.querySelector("iframe").src = '';
+    //     // document.getElementById("closePlayer").addEventListener('click', function() {
+    //     $("#player").fadeOut()
+    //     $("#antiplayer").fadeOut()
+    //     document.querySelector("iframe").src = '';
 
-        document.getAnimations().forEach(
-            function(animation) {
-                animation.playbackRate = 1;
-            }
-        );
-    })
-
-
-    document.getElementById("closePlayer").addEventListener('click', function() {
-        $("#player").fadeOut()
-        $("#antiplayer").fadeOut()
-        document.querySelector("iframe").src = '';
+    //     document.getAnimations().forEach(
+    //         function(animation) {
+    //             animation.playbackRate = 1;
+    //         }
+    //     );
+    // })
 
 
-        document.getAnimations().forEach(
-            function(animation) {
-                animation.playbackRate = 1;
-            }
-        );
-    })
+    // document.getElementById("closePlayer").addEventListener('click', function() {
+    //     $("#player").fadeOut()
+    //     $("#antiplayer").fadeOut()
+    //     document.querySelector("iframe").src = '';
+    //     let stateObj = { id: 'home' };
+    //     window.history.replaceState(stateObj,
+    //         '', "/");
+
+    //     document.getAnimations().forEach(
+    //         function(animation) {
+    //             animation.playbackRate = 1;
+    //         }
+    //     );
+    // })
 
     document.getElementById("blackhole").addEventListener("click", function() {
         alert("Tutti gli altri video qua")
@@ -84,7 +86,9 @@ $(window).load(function() {
 
     let titles = document.querySelectorAll("#data a");
     let descriptions = document.querySelectorAll("dd span");
-    let planets = document.querySelectorAll("planet");
+    let titleFilm = document.querySelectorAll("dt");
+    console.log(titleFilm)
+        // let planets = document.querySelectorAll("planet");
 
     let x = 0
 
@@ -94,13 +98,33 @@ $(window).load(function() {
         descriptions[x].innerHTML = assets[key]['description'];
         titles[x].title = key
         descriptions[x].title = key
-            // planets[x].title = key
+
+        titleFilm[x].innerHTML = assets[key]['title'];
+        // planets[x].title = key
         x++
     });
 
 
+    function close() {
+        document.body.addEventListener('click', function(e) {
+            if (!e.target.classList.contains('player')) {
 
+                // $("#player").fadeOut()
+                // $("#antiplayer").fadeOut()
+                // document.querySelector("iframe").src = '';
+                // let stateObj = { id: 'home' };
+                // window.history.replaceState(stateObj,
+                //     '', "/");
 
+                // document.getAnimations().forEach(
+                //     function(animation) {
+                //         animation.playbackRate = 1;
+                //     }
+                // );
+            }
+        });
+    }
+    close()
     var baseUrl = 'http://pnofrc.github.io/celo/#'
 
     $("#data a").click(function(e) {
@@ -111,11 +135,20 @@ $(window).load(function() {
             document.querySelector("iframe").src = assets[current]['link'];
             $("#player").fadeIn()
             $("#antiplayer").fadeIn()
-            window.location.replace(url);
+                // window.location.replace(url);
+            let stateObj = { id: current };
+            window.history.replaceState(stateObj,
+                current, "#" + current);
+
             document.getAnimations().forEach(
                 function(animation) {
                     animation.playbackRate = 0;
                 });
+
+
+
+
+
         } else {
             solarsys.removeClass().addClass(ref);
             $(this).parent().find('a').removeClass('active');
@@ -134,11 +167,21 @@ $(window).load(function() {
             document.querySelector("iframe").src = assets[current]['link'];
             $("#player").fadeIn()
             $("#antiplayer").fadeIn()
-            window.location.replace(url);
+                // window.location.replace(url);
+            let stateObj = { id: current };
+            window.history.replaceState(stateObj,
+                current, "#" + current);
+
+
             document.getAnimations().forEach(
                 function(animation) {
                     animation.playbackRate = 0;
                 });
+
+
+
+
+
         } else {
             $("#data a").removeClass('active')
             solarsys.removeClass().addClass(ref);

@@ -24,15 +24,15 @@
         <a id="toggle-controls" href="#controls"><i class="icon-controls"></i>View</a>
     </div>
     <div id="data">
-        <a class="sun active" title="8" href="#sunspeed"></a>
-        <a class="mercury" title="0" href="#mercuryspeed"></a>
-        <a class="venus" title="1" href="#venusspeed"></a>
-        <a class="earth" title="2" href="#earthspeed"></a>
-        <a class="mars" title="3" href="#marsspeed"></a>
-        <a class="jupiter" title="4" href="#jupiterspeed"></a>
-        <a class="saturn" title="5" href="#saturnspeed"></a>
-        <a class="uranus" title="6" href="#uranusspeed"></a>
-        <a class="neptune" title="7" href="#neptunespeed"></a>
+        <a class="sun active" title=""></a>
+        <a class="mercury" title=""></a>
+        <a class="venus" title=""></a>
+        <a class="earth" title=""></a>
+        <a class="mars" title=""></a>
+        <a class="jupiter" title=""></a>
+        <a class="saturn" title=""></a>
+        <a class="uranus" title=""></a>
+        <a class="neptune" title=""></a>
     </div>
     <div id="controls">
         <!-- <label class="set-view">
@@ -62,8 +62,8 @@
 
     <div id="antiplayer"></div>
     <div id="player">
-        <div id="closePlayer">X</div>
-        <iframe id="playerSrc" src="" frameborder="0" allow="fullscreen;" allowfullscreen></iframe>
+        <button id="closePlayer"> <span>Close</span> </button>
+        <iframe id="playerSrc" src="" frameborder="0" allow="fullscreen;" color="#0f0" allowfullscreen></iframe>
     </div>
 
 
@@ -84,6 +84,13 @@
 
             <div id="solar-system" class="sun">
 
+
+                <div id="sun">
+                    <dl class="infos">
+                        <dt></dt>
+                        <dd><span title=""></span></dd>
+                    </dl>
+                </div>
 
                 <div id="mercury" class="orbit">
                     <div class="pos">
@@ -182,13 +189,6 @@
                 </div>
 
 
-                <div id="sun">
-                    <dl class="infos">
-                        <dt>Bio</dt>
-                        <dd><span title=""></span></dd>
-                    </dl>
-                </div>
-
             </div>
         </div>
     </div>
@@ -199,7 +199,7 @@
         }
     </script> -->
     <script src="cms.js" async defer></script>
-    <script src="app.js" async defer></script>
+    <script src="app2.js" async defer></script>
     <script src="theme.js"></script>
     <!-- <script src="later.js"></script> -->
 

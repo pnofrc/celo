@@ -69,7 +69,7 @@ body {
 }
 
 #hello {
-    margin: 45px;
+    margin-left: 45px;
     position: absolute;
     top: 0;
     font-size: 28px;
@@ -80,7 +80,7 @@ body {
 #hello i {
     line-height: 30px;
     font-size: 20px;
-    text-align: right;
+    text-align: left;
 }
 
 #comet img {
@@ -154,8 +154,8 @@ body {
     position: absolute;
     max-width: 15%;
     z-index: 20;
-    bottom: 8%;
-    left: 5%;
+    bottom: 14%;
+    left: 4%;
     filter: invert(var(--invert)) drop-shadow(0 1rem 0.75rem var(--shadow)) blur(2px);
     -webkit-animation: blackhole 2s linear infinite;
     /* Safari */
@@ -225,21 +225,32 @@ body {
 iframe {
     width: 100%;
     height: 100%;
+    /* background: black; */
     /* border: solid 3px var(--orbits); */
 }
 
+.headers {
+    display: none;
+}
+
 #closePlayer {
+    border: solid;
+    border-radius: 50%;
     position: fixed;
     z-index: 101;
     display: block;
-    font-size: 30px;
-    background-color: #FFF;
-    width: 2%;
-    padding-left: .5%;
+    background-color: var(--shadow);
+    color: var(--background);
+    width: 8%;
+    height: 5%;
+    right: 5%;
+    /* padding-left: .5%; */
 }
 
 #closePlayer:hover {
     cursor: pointer;
+    background-color: var(--background);
+    color: var(--active);
 }
 
 #antiplayer {
@@ -250,6 +261,10 @@ iframe {
     height: 100%;
     z-index: 100;
     background-color: var(--playerOn);
+}
+
+#antiplayer:hover {
+    cursor: pointer;
 }
 
 #universe {
@@ -281,7 +296,7 @@ iframe {
     position: absolute;
     top: 50%;
     left: 50%;
-    border: 2px dashed var(--orbits);
+    border: 5px dashed var(--orbits);
     border-radius: 50%;
     transform-style: preserve-3d;
     animation-name: orbit;
@@ -530,9 +545,13 @@ iframe {
     font-size: 22%;
 } */
 
-.zoom-large.view-3D .scale-d #solar-system {
+
+/* /QUA */
+
+
+/* .zoom-large.view-3D .scale-d #solar-system {
     font-size: 48%;
-}
+} */
 
 
 /* .zoom-large.view-2D .scale-s #solar-system {
@@ -622,54 +641,54 @@ iframe {
 #mercury .pos,
 #mercury .planet,
 #mercury.orbit {
-    animation-duration: 250.89016s;
+    animation-duration: 200s;
 }
 
 #venus .pos,
 #venus .planet,
 #venus.orbit {
-    animation-duration: 260.38237s;
+    animation-duration: 300s;
 }
 
 #earth .pos,
 #earth .planet,
 #earth.orbit {
-    animation-duration: 271.00021s;
+    animation-duration: 400s;
 }
 
 #earth .orbit .pos,
 #earth .orbit {
-    animation-duration: 283.89764s;
+    animation-duration: 500s;
 }
 
 #mars .pos,
 #mars .planet,
 #mars.orbit {
-    animation-duration: 292.57017s;
+    animation-duration: 600s;
 }
 
 #jupiter .pos,
 #jupiter .planet,
 #jupiter.orbit {
-    animation-duration: 304.35138s;
+    animation-duration: 700s;
 }
 
 #saturn .pos,
 #saturn .planet,
 #saturn.orbit {
-    animation-duration: 335.36998s;
+    animation-duration: 800s;
 }
 
 #uranus .pos,
 #uranus .planet,
 #uranus.orbit {
-    animation-duration: 350.20215s;
+    animation-duration: 900s;
 }
 
 #neptune .pos,
 #neptune .planet,
 #neptune.orbit {
-    animation-duration: 487.49584s;
+    animation-duration: 1000s;
 }
 
 
@@ -683,15 +702,15 @@ iframe {
 }
 
 .scale-stretched #mercury .planet {
-    font-size: 8.5em;
+    font-size: 10.5em;
 }
 
 .scale-stretched #venus .planet {
-    font-size: 9.72em;
+    font-size: 12.72em;
 }
 
 .scale-stretched #earth .planet {
-    font-size: 10.92em;
+    font-size: 14.92em;
 }
 
 
@@ -700,15 +719,15 @@ iframe {
 } */
 
 .scale-stretched #mars .planet {
-    font-size: 12.9em;
+    font-size: 16.9em;
 }
 
 .scale-stretched #jupiter .planet {
-    font-size: 14em;
+    font-size: 18em;
 }
 
 .scale-stretched #saturn .planet {
-    font-size: 15.8em;
+    font-size: 19.8em;
 }
 
 .scale-stretched #uranus .planet {
@@ -1659,7 +1678,7 @@ dl.infos dd span {
 .saturn #saturn.orbit,
 .uranus #uranus.orbit,
 .neptune #neptune.orbit {
-    border: 4px solid var(--selectedOrbit);
+    border: 6px dotted var(--selectedOrbit);
 }
 
 .hide-UI h1,
@@ -1726,11 +1745,13 @@ h1 span,
 #data a:hover,
 #controls label:hover {
     color: var(--active);
+    cursor: pointer;
 }
 
 #data a.active {
     color: var(--controls);
-    border: solid 3px var(--controls)
+    border: solid 3px var(--controls);
+    border-radius: 50%;
 }
 
 #navbar a {
