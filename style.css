@@ -68,6 +68,72 @@ body {
     background-color: var(--background);
 }
 
+#animationResp {
+    display: none;
+    position: absolute;
+    width: 50%;
+    height: 30%;
+    top: 35%;
+    left: 25%;
+    /* border: solid; */
+    z-index: 200;
+    /* color: red; */
+    /* background-color: red; */
+    /* background-image: url(https://cdn.onlinewebfonts.com/svg/img_68281.png); */
+    /* filter: invert(); */
+}
+
+#animationResp img {
+    width: 100%;
+    filter: invert();
+    animation: rotateScreen 3s linear infinite;
+    /* animation-delay: 1s; */
+}
+
+#animationResp span {
+    font-size: 200%;
+    font-weight: bold;
+    color: var(--toggle);
+    text-align: center;
+    margin-top: 2em;
+    animation: impText 3s linear infinite;
+    ;
+}
+
+@keyframes rotateScreen {
+    0% {
+        transform: rotateZ(0deg);
+        opacity: 0%;
+    }
+    10% {
+        opacity: 100%;
+    }
+    50% {
+        transform: rotateZ(-360deg);
+        opacity: 100%;
+    }
+    60% {
+        opacity: 0%;
+    }
+    100% {
+        transform: rotateZ(-360deg);
+        opacity: 0%;
+    }
+}
+
+@keyframes impText {
+    0% {
+        transform: scale(90%);
+    }
+    50% {
+        transform: scale(100%);
+    }
+    100% {
+        transform: scale(90%);
+        /* opacity: 0%; */
+    }
+}
+
 #hello {
     margin-left: 45px;
     position: absolute;
@@ -157,9 +223,9 @@ body {
     bottom: 14%;
     left: 4%;
     filter: invert(var(--invert)) drop-shadow(0 1rem 0.75rem var(--shadow)) blur(2px);
-    -webkit-animation: blackhole 2s linear infinite;
+    -webkit-animation: blackhole 20s linear infinite;
     /* Safari */
-    animation: blackhole 100s linear infinite;
+    animation: blackhole 20s linear infinite;
     animation-delay: 3s;
     /* z-index: -1; */
     /* filter: blur(2px); */
@@ -184,22 +250,26 @@ body {
 }
 
 @-webkit-keyframes blackhole {
-    from {
+    0% {
         transform: rotate(0);
-        max-width: 18%;
     }
-    to {
-        transform: rotate(360deg);
-        max-width: 13%;
+    50% {
+        transform: rotate(50deg);
+    }
+    100% {
+        transform: rotate(0);
     }
 }
 
 @keyframes blackhole {
-    from {
+    0% {
         transform: rotate(0);
     }
-    to {
-        transform: rotate(360deg);
+    50% {
+        transform: rotate(50deg);
+    }
+    100% {
+        transform: rotate(0);
     }
 }
 
@@ -207,8 +277,10 @@ body {
     width: 5%;
 }
 
-#toggle svg path {
-    stroke: var(--toggle);
+#toggle button {
+    background-color: var(--toggle);
+    width: 200%;
+    height: 100%;
 }
 
 #player {
@@ -296,7 +368,7 @@ iframe {
     position: absolute;
     top: 50%;
     left: 50%;
-    border: 5px dashed var(--orbits);
+    border: 3px solid var(--orbits);
     border-radius: 50%;
     transform-style: preserve-3d;
     animation-name: orbit;
@@ -1678,7 +1750,7 @@ dl.infos dd span {
 .saturn #saturn.orbit,
 .uranus #uranus.orbit,
 .neptune #neptune.orbit {
-    border: 6px dotted var(--selectedOrbit);
+    border: 4px solid var(--selectedOrbit);
 }
 
 .hide-UI h1,

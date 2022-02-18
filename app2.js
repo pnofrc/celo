@@ -1,8 +1,6 @@
 $(window).load(function() {
 
-    if (window.innerHeight > window.innerWidth) {
-        alert("Please use Landscape!");
-    }
+
 
     // $("#playerSrc").on("load", function() {
     //     let head = $("#playerSrc").contents().find("head");
@@ -70,8 +68,6 @@ $(window).load(function() {
     let titles = document.querySelectorAll("#data a");
     let descriptions = document.querySelectorAll("dd span");
     let titleFilm = document.querySelectorAll("dt");
-    console.log(titleFilm)
-        // let planets = document.querySelectorAll("planet");
 
     let x = 0
 

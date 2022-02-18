@@ -15,8 +15,12 @@
 <body class="opening hide-UI view-2D
  zoom-large data-close controls-close">
 
+    <div id="animationResp">
+        <img src="https://cdn.onlinewebfonts.com/svg/img_68281.png" alt="">
+        <span>Rotate the device!</span></div>
+
     <div id="hello">
-        <p>Marco Celotti<br><i>in arte Celo. tst2</i></p>
+        <p>Marco Celotti<br><i>in arte Celo.</i></p>
     </div>
 
     <div id="navbar">
@@ -35,20 +39,19 @@
         <a class="neptune" title=""></a>
     </div>
     <div id="controls">
-        <!-- <label class="set-view">
-            <input type="checkbox">
-          </label> -->
+        <!-- 
         <label class="set-zoom">
             <button type="checkbox"></button>
-          </label>
+          </label> -->
 
         <label id="toggle">
-            <?xml version="1.0" encoding="UTF-8"?>
+            <button></button>
+            <!-- <?xml version="1.0" encoding="UTF-8"?>
             <svg version="1.1" id="Layer_2" xml:space="preserve">
                 <g>
                 <path fill="none" stroke="#000000" stroke-width="2.4" stroke-miterlimit="10" d="M24,24l12,20.8 M24,24h24 M24,24l20.8,12 M24,24   h24 M24,24L36,3.2 M24,24l20.8-12 M24,24L36,3.2 M24,24L12,3.2 M24,24V0 M24,24L12,3.2 M24,24H0 M24,24L3.2,12 M24,24H0 M24,24   L12,44.8 M24,24L3.2,36 M24,24L12,44.8 M24,24l12,20.8 M24,24v24"/>
                 </g>
-            </svg>
+            </svg> -->
         </label>
         <!-- <label>
             <input type="radio" class="set-size" name="scale">
@@ -201,7 +204,21 @@
     <script src="cms.js" async defer></script>
     <script src="app2.js" async defer></script>
     <script src="theme.js"></script>
-    <!-- <script src="later.js"></script> -->
+    <script>
+        let y = 0
+        if (window.innerHeight > window.innerWidth) {
+            $("#animationResp").fadeIn()
+        }
+
+
+        window.addEventListener('resize', function() {
+            if (window.innerHeight > window.innerWidth) {
+                $("#animationResp").fadeIn()
+            } else {
+                $("#animationResp").fadeOut()
+            }
+        })
+    </script>
 
 </body>
 
