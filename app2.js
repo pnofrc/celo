@@ -16,6 +16,9 @@ $(window).load(function() {
 
     let hash = $(location).attr('hash').split('#').pop();
 
+    // window.onpopstate = function() {
+    //     alert("Back/Forward clicked!");
+    // }
     if (hash) {
         document.querySelector("iframe").src = assets[hash]['link'];
         $("#player").fadeIn()
@@ -32,7 +35,7 @@ $(window).load(function() {
 
 
     document.getElementById("blackhole").addEventListener("click", function() {
-        alert("Tutti gli altri video qua")
+        window.open("./blackhole/", "_self")
     })
 
 
@@ -59,10 +62,7 @@ $(window).load(function() {
         e.preventDefault();
     });
 
-    $("#toggle-controls").click(function(e) {
-        body.toggleClass("controls-open controls-close");
-        e.preventDefault();
-    });
+
 
 
     let titles = document.querySelectorAll("#data a");
@@ -85,7 +85,7 @@ $(window).load(function() {
 
 
     function stopAnimation() {
-        document.getAnimations().forEach(
+        document.getElementById("universe").getAnimations().forEach(
             function(animation) {
                 animation.playbackRate = 0;
             });
@@ -171,5 +171,32 @@ $(window).load(function() {
     $(".set-zoom").click(function() { body.toggleClass("zoom-large zoom-close"); });
 
     init();
+
+
+    // RESPONSIVeNESS
+
+
+    let y = 0
+    if (window.innerHeight > window.innerWidth) {
+        $("#animationResp").fadeIn()
+
+        setTimeout(function() {
+            stopAnimation()
+        }, 5000)
+    }
+
+
+    window.addEventListener('resize', function() {
+        if (window.innerHeight > window.innerWidth) {
+            $("#animationResp").fadeIn()
+            stopAnimation()
+        } else {
+            $("#animationResp").fadeOut()
+            startAnimtion()
+        }
+    })
+
+
+
 
 });

@@ -16,6 +16,7 @@
     --shadowSun: rgba(255, 160, 60, 0.8);
     --playerOn: rgba(0, 0, 0, 0.3);
     --invert: 1;
+    --invert2: 0;
 }
 
 html,
@@ -85,7 +86,7 @@ body {
 
 #animationResp img {
     width: 100%;
-    filter: invert();
+    filter: invert(var(--invert2));
     animation: rotateScreen 3s linear infinite;
     /* animation-delay: 1s; */
 }
@@ -103,21 +104,17 @@ body {
 @keyframes rotateScreen {
     0% {
         transform: rotateZ(0deg);
-        opacity: 0%;
+        /* opacity: 0%; */
     }
-    10% {
+    /* 10% {
         opacity: 100%;
-    }
-    50% {
-        transform: rotateZ(-360deg);
-        opacity: 100%;
-    }
-    60% {
+    } */
+    /* 60% {
         opacity: 0%;
-    }
+    } */
     100% {
         transform: rotateZ(-360deg);
-        opacity: 0%;
+        /* opacity: 0%; */
     }
 }
 
@@ -1788,7 +1785,9 @@ h1 span,
     color: rgba(255, 255, 255, 0.5);
 }
 
-#navbar,
+
+/* #navbar, */
+
 #controls,
 #data {
     background: rgba(0, 0, 0, 0.4);
@@ -2138,7 +2137,7 @@ h1 {
     #data {
         background: transparent;
     }
-    #navbar a {
+    #navbar a#toggle-data {
         display: none;
     }
     h1 {

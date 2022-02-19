@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+
+    <style>
+         :root {
+            --playerOn: rgba(0, 0, 0, 0.3);
+        }
+        
+        html,
+        body {
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        #player {
+            /* border: solid; */
+            display: none;
+            position: fixed;
+            width: 90%;
+            margin-left: 5%;
+            height: 80%;
+            margin-top: 5%;
+            z-index: 100;
+        }
+        
+        iframe {
+            width: 100%;
+            height: 100%;
+            /* background: black; */
+            /* border: solid 3px var(--orbits); */
+        }
+        
+        #antiplayer {
+            display: none;
+            border: solid;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: 100;
+            background-color: var(--playerOn);
+        }
+        
+        #antiplayer:hover {
+            cursor: pointer;
+        }
+        
+        #hello {
+            margin-left: 45px;
+            position: absolute;
+            top: 0;
+            font-size: 28px;
+            color: var(--background);
+            filter: invert();
+        }
+        
+        #hello i {
+            line-height: 30px;
+            font-size: 20px;
+            text-align: left;
+        }
+        
+        #hello a {
+            text-decoration: none;
+            border-bottom: solid .2px black;
+            vertical-align: top;
+            color: black;
+        }
+    </style>
+    <script src="pixi.min.js"></script>
+
+</head>
+
+<body>
+
+    <div id="hello">
+        <p><a href="../">Marco Celotti</a><br><i>in arte Celo.</i></p>
+    </div>
+
+    <div id="antiplayer"></div>
+    <div id="player">
+        <h1>Titolo</h1>
+        <button id="closePlayer"> <span>Close</span> </button>
+        <iframe id="playerSrc" src="" frameborder="0" allow="fullscreen;" color="#0f0" allowfullscreen></iframe>
+        <div>
+            <p>due parole</p>
+        </div>
+    </div>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <script>
+    </script>
+    <script src="remains.js" async defer></script>
+    <!-- <script src="../app2.js" async defer></script> -->
+
+    <!-- <script src="../theme.js" async defer></script> -->
+
+
+</body>
+
+</html>

@@ -17,15 +17,15 @@
 
     <div id="animationResp">
         <img src="https://cdn.onlinewebfonts.com/svg/img_68281.png" alt="">
-        <span>Rotate the device!</span></div>
+        <span>ROTATE THE DEVICE!</span></div>
 
     <div id="hello">
         <p>Marco Celotti<br><i>in arte Celo.</i></p>
     </div>
 
     <div id="navbar">
-        <a id="toggle-data" href="#data"><i class="icon-data"></i>Film</a>
-        <a id="toggle-controls" href="#controls"><i class="icon-controls"></i>View</a>
+        <a id="toggle-data" id="data"><i class="icon-data"></i>Film</a>
+        <a id="toggle-controls"><i class="icon-controls"></i>View</a>
     </div>
     <div id="data">
         <a class="sun active" title=""></a>
@@ -45,7 +45,7 @@
           </label> -->
 
         <label id="toggle">
-            <button></button>
+            <!-- <button></button> -->
             <!-- <?xml version="1.0" encoding="UTF-8"?>
             <svg version="1.1" id="Layer_2" xml:space="preserve">
                 <g>
@@ -204,21 +204,7 @@
     <script src="cms.js" async defer></script>
     <script src="app2.js" async defer></script>
     <script src="theme.js"></script>
-    <script>
-        let y = 0
-        if (window.innerHeight > window.innerWidth) {
-            $("#animationResp").fadeIn()
-        }
 
-
-        window.addEventListener('resize', function() {
-            if (window.innerHeight > window.innerWidth) {
-                $("#animationResp").fadeIn()
-            } else {
-                $("#animationResp").fadeOut()
-            }
-        })
-    </script>
 
 </body>
 

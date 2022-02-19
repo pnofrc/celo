@@ -14,6 +14,7 @@ if (localStorage.lenght === 0) {
     document.body.style.setProperty('--shadowSun', 'rgba(252, 60, 255, 0.85);');
 
 
+    document.body.style.setProperty('--invert2', '1');
     document.body.style.setProperty('--invert', '0');
     localStorage.setItem('theme', 'dark')
     console.log("dark mode")
@@ -27,7 +28,10 @@ if (localStorage.lenght === 0) {
     document.body.style.setProperty('--shadow', 'rgba(0,0,0, 0.514)');
     document.body.style.setProperty(' --playerOn', 'rgba(0,0,0, 0.3)');
     document.body.style.setProperty('--invert', '1');
+    document.body.style.setProperty('--invert2', '0');
+
     document.body.style.setProperty('--shadowSun', 'rgba(255, 160, 60, 0.85)');
+
 
     localStorage.setItem('theme', 'light')
     console.log("light mode")
@@ -36,6 +40,12 @@ if (localStorage.lenght === 0) {
 
 let toggle = document.getElementById("toggle");
 toggle.addEventListener("click", function() {
+    checkTheme()
+
+})
+
+
+function checkTheme() {
 
     if (localStorage.getItem('theme') == 'light') {
 
@@ -47,6 +57,8 @@ toggle.addEventListener("click", function() {
         document.body.style.setProperty('--shadow', 'rgba(255,255,255, 0.514)');
         document.body.style.setProperty(' --playerOn', 'rgba(255,255,255, 0.3)');
         document.body.style.setProperty('--invert', '0');
+        document.body.style.setProperty('--invert2', '1');
+
         document.body.style.setProperty('--shadowSun', 'rgba(252, 60, 255, 0.85)');
 
 
@@ -63,9 +75,19 @@ toggle.addEventListener("click", function() {
         document.body.style.setProperty('--shadow', 'rgba(0,0,0, 0.514)');
         document.body.style.setProperty(' --playerOn', 'rgba(0,0,0, 0.3)');
         document.body.style.setProperty('--invert', '1');
+        document.body.style.setProperty('--invert2', '0');
+
         document.body.style.setProperty('--shadowSun', 'rgba(255, 160, 60, 0.85)');
 
         localStorage.setItem('theme', 'light')
         console.log("light mode")
     }
-})
+
+}
+
+
+$("#toggle-controls").click(function(e) {
+    checkTheme()
+        // body.toggleClass("controls-open controls-close");
+    e.preventDefault();
+});
