@@ -1,0 +1,12 @@
+-ss 00:00:52 -to 00:00:58 -i manuelCopy.mp4 out.mp4
+-i out.mp4 -filter:v "crop=1000:1000" test.mp4
+-i test.mp4 folder/%04d.jpg
+
+
+fisheye
+for i in folder/*.png; do sh fisheye -o 90 -i 90 -t linear -f circular -m gray "$i" "${i%.*}.jpg"; done
+
+
+-i  'folder/%04d.jpg' -framerate 24 -filter_complex  "fps=24,split=2[palette_in][gif];[palette_in]palettegen[palette_out];[gif]fifo[gif_fifo]; [gif_fifo][palette_out]paletteuse" -y image.gif
+
+
