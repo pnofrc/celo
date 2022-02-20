@@ -69,6 +69,11 @@ body {
     background-color: var(--background);
 }
 
+script,
+style {
+    color: transparent
+}
+
 #animationResp {
     display: none;
     position: absolute;
@@ -138,6 +143,15 @@ body {
     font-size: 28px;
     color: var(--background);
     filter: invert();
+    z-index: 1;
+}
+
+#hello a {
+    color: var(--background);
+    text-decoration: none;
+    border-bottom: solid .2px var(--background);
+    /* vertical-align: top; */
+    line-height: none;
 }
 
 #hello i {

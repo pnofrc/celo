@@ -3,6 +3,8 @@ if (localStorage.lenght === 0) {
     localStorage.setItem('theme') == 'light'
     document.getElementById("cometImg").classList.add('invert');
     document.getElementById("blackholeImg").classList.add('invert');
+    document.getElementById("toggle-controls").innerHTML = "-> Dark"
+
 } else if (localStorage.getItem('theme') == 'dark') {
     document.body.style.setProperty('--background', 'black');
     document.body.style.setProperty('--orbits', 'rgb(123, 0, 255)');
@@ -18,6 +20,8 @@ if (localStorage.lenght === 0) {
     document.body.style.setProperty('--invert', '0');
     localStorage.setItem('theme', 'dark')
     console.log("dark mode")
+    document.getElementById("toggle-controls").innerHTML = "-> Light"
+
 
 } else if (localStorage.getItem('theme') == 'light') {
     document.body.style.setProperty('--background', 'white');
@@ -35,10 +39,12 @@ if (localStorage.lenght === 0) {
 
     localStorage.setItem('theme', 'light')
     console.log("light mode")
+    document.getElementById("toggle-controls").innerHTML = "-> Dark"
+
 }
 
 
-let toggle = document.getElementById("toggle");
+let toggle = document.getElementById("toggle-controls");
 toggle.addEventListener("click", function() {
     checkTheme()
 
@@ -60,7 +66,7 @@ function checkTheme() {
         document.body.style.setProperty('--invert2', '1');
 
         document.body.style.setProperty('--shadowSun', 'rgba(252, 60, 255, 0.85)');
-
+        document.getElementById("toggle-controls").innerHTML = "-> Light"
 
 
         localStorage.setItem('theme', 'dark')
@@ -81,13 +87,15 @@ function checkTheme() {
 
         localStorage.setItem('theme', 'light')
         console.log("light mode")
+        document.getElementById("toggle-controls").innerHTML = "-> Dark"
+
     }
 
 }
 
 
-$("#toggle-controls").click(function(e) {
-    checkTheme()
-        // body.toggleClass("controls-open controls-close");
-    e.preventDefault();
-});
+// $("#toggle-controls").click(function(e) {
+//     checkTheme()
+//         // body.toggleClass("controls-open controls-close");
+//         // e.preventDefault();
+// });

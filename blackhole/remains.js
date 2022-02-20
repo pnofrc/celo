@@ -16,6 +16,9 @@ $(window).load(function() {
         width: innerWidth,
         height: innerHeight
     });
+
+
+
     document.body.appendChild(app.view);
 
 
@@ -39,37 +42,20 @@ $(window).load(function() {
 
 
     icons.forEach(function(icon) {
+
         // create a new Sprite that uses the image name that we just generated as its source
-
-
 
         // const dude = new PIXI.AnimatedSprite(textureArray);
         const dude = PIXI.Sprite.from(icon[0]);
 
-        // var renderTexture = new PIXI.Sprite.from(icon[0]);
-
-        // var subTexture = new PIXI.Texture(renderTexture, new PIXI.Rectangle(50, 50, 50, 50))
-
-        // const dude = new PIXI.Sprite(subTexture);
-
-        // const circle = new PIXI.Graphics()
-        //     .beginFill(0xFF0000)
-        //     .drawCircle(radius, radius, radius)
-        //     .endFill();
-
-        // dude.renderer.generateTexture(dude, PIXI.SCALE_MODES.NEAREST, 1, circle);
-
-        // mask.drawCircle(20, 20, 20)
-
-        // cells.mask = mask;
 
         // set a random scale for the dude - no point them all being the same size!
-        dude.scale.set(0.35 + Math.random() * .6);
+        dude.scale.set((innerHeight / 3000) + Math.random() * (innerHeight / 1200));
         // dude.scale.set(innerHeight / 1500);
 
         // finally lets set the dude to be at a random positionmedia
         dude.x = Math.random() * app.screen.width;
-        dude.y = Math.random() * app.screen.height;
+        dude.y = Math.random() * (app.screen.height - 200);
 
         // dude.tint = 0xFF00FF;
 
@@ -95,6 +81,11 @@ $(window).load(function() {
         // Pointers normalize touch and mouse
         dude.on('pointerdown', onClick);
 
+
+
+
+
+
         // function hover(element, enter, leave){
         //     , enter)
         //     element.addEventListener('mouseleave', leave)
@@ -111,26 +102,29 @@ $(window).load(function() {
 
         //var SAFARIMERDA = icons[i][1];
 
-        dude.on("mouseover", function(event) {
 
-            dude.speed = 0
-            console.log('d')
-
-        });
 
         function onClick() {
 
             document.querySelector("iframe").src = icon[1];
             $("#player").fadeIn()
+                // $("canvas").fadeOut()
+                // $("canvas").fadeIn()
+            $("canvas").css("opacity", "0.3")
+
             $("#antiplayer").fadeIn()
             dude.speed = 0
             app.ticker.stop()
+            $("#hello").fadeOut()
             document.getElementById("closePlayer").addEventListener("click", function() {
                 $("#player").fadeOut()
                 $("#antiplayer").fadeOut()
                 document.querySelector("iframe").src = '';
                 dude.speed = 1
+                $("canvas").css("opacity", "1")
+                $("#hello").fadeIn()
                 app.ticker.start()
+
             })
 
             //window.open(this.SAFARIMERDA,"_self");
@@ -153,6 +147,8 @@ $(window).load(function() {
 
 
     app.ticker.add(() => {
+
+
         // console.log(app.ticker.lastTime)
         if (app.ticker.lastTime > 50000 && app.ticker.lastTime < 50100) {
             $("canvas").fadeOut(1000)
@@ -166,9 +162,10 @@ $(window).load(function() {
         for (let i = 0; i < aliens.length; i++) {
             const dude = aliens[i];
             dude.direction += dude.turningSpeed / 500;
-            dude.x += Math.sin(dude.direction) * dude.direction;
-            dude.y += Math.cos(dude.direction) * dude.speed * 0.00009;
-            dude.rotation = dude.direction - Math.PI * 0.4;
+            dude.x += Math.sin(dude.direction) * dude.direction * Math.random();
+            dude.y += Math.cos(dude.direction) * dude.speed * Math.random();
+            dude.rotation = dude.direction - Math.PI * Math.random() * 0.0009;
+
 
             // wrap the dudes by testing their boundsmedia.
             if (dude.x < dudeBounds.x) {
