@@ -103,7 +103,7 @@ style {
     text-align: center;
     margin-top: 2em;
     animation: impText 3s linear infinite;
-    ;
+    /* color: transparent */
 }
 
 @keyframes rotateScreen {
@@ -1296,7 +1296,7 @@ iframe {
 }
 
 #mercury .planet {
-    background-image: url(tet.gif)
+    /*     background-image: url(); */
 }
 
 
@@ -1342,7 +1342,7 @@ iframe {
 }
 
 #venus .planet {
-    background-image: url(tet.gif)
+    /*     background-image: url(); */
 }
 
 
@@ -1386,7 +1386,7 @@ iframe {
 }
 
 #earth .planet {
-    background-image: url(tet.gif)
+    /*     background-image: url(); */
 }
 
 
@@ -1439,7 +1439,7 @@ iframe {
 }
 
 #mars .planet {
-    background-image: url(tet.gif)
+    /*     background-image: url(); */
 }
 
 
@@ -1482,7 +1482,7 @@ iframe {
 }
 
 #jupiter .planet {
-    background-image: url(tet.gif)
+    /*     background-image: url(); */
 }
 
 
@@ -1525,7 +1525,7 @@ iframe {
 }
 
 #saturn .planet {
-    background-image: url(tet.gif)
+    /*     background-image: url(); */
 }
 
 
@@ -1590,7 +1590,7 @@ shadow-saturn-ring{ 0%   { box-shadow: inset -16px  0      4px   rgba(20, 40, 50
 }
 
 #uranus .planet {
-    background-image: url(tet.gif)
+    /*     background-image: url(); */
 }
 
 
@@ -1633,7 +1633,7 @@ shadow-saturn-ring{ 0%   { box-shadow: inset -16px  0      4px   rgba(20, 40, 50
 }
 
 #neptune .planet {
-    background-image: url(tet.gif)
+    /*     background-image: url(); */
 }
 
 
@@ -2106,6 +2106,16 @@ h1 {
     transition-delay: 1s;
 }
 
+#wait {
+    display: block;
+    top: 0;
+    position: fixed;
+    z-index: 2000;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background);
+}
+
 
 /* --------------------------------------------------------------------------- images */
 
@@ -2114,7 +2124,7 @@ h1 {
 
 @media screen and (max-width: 299px) {
     #universe {
-        font-size: 20%;
+        font-size: 10%;
     }
     #hello {
         top: 80%;
@@ -2127,7 +2137,7 @@ h1 {
 
 @media screen and (min-width: 300px) {
     #universe {
-        font-size: 24%;
+        font-size: 14%;
     }
     #hello {
         top: 80%;
@@ -2140,7 +2150,7 @@ h1 {
 
 @media screen and (min-width: 500px) {
     #universe {
-        font-size: 36%;
+        font-size: 16%;
     }
     #hello {
         top: 80%;
@@ -2153,7 +2163,7 @@ h1 {
 
 @media screen and (min-width: 600px) {
     #universe {
-        font-size: 44%;
+        font-size: 40%;
     }
     #hello {
         top: 80%;
@@ -2238,6 +2248,14 @@ h1 {
     #toggle-controls {
         right: 30px;
     }
+    #hello {
+        top: 0;
+        left: 0;
+        width: 15%;
+    }
+    #hello i {
+        text-align: left;
+    }
 }
 
 @media screen and (min-width: 1600px) {
@@ -2249,5 +2267,13 @@ h1 {
     }
     #toggle-controls {
         right: 30px;
+    }
+    #hello {
+        top: 0;
+        left: 0;
+        width: 15%;
+    }
+    #hello i {
+        text-align: left;
     }
 }

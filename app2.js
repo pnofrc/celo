@@ -1,24 +1,7 @@
 $(window).load(function() {
 
-
-
-    // $("#playerSrc").on("load", function() {
-    //     let head = $("#playerSrc").contents().find("head");
-    //     let css = '<style>.headers{display:none}</style>';
-    //     $(head).append(css);
-    // });
-
-    // let myiFrame = document.getElementById("playerSrc");
-    // let doc = myiFrame.contentDocument;
-    // doc.body.innerHTML = doc.body.innerHTML + '<style>.headers{display:none}</style>';
-
-
-
     let hash = $(location).attr('hash').split('#').pop();
 
-    // window.onpopstate = function() {
-    //     alert("Back/Forward clicked!");
-    // }
     if (hash) {
         document.querySelector("iframe").src = assets[hash]['link'];
         $("#player").fadeIn()
@@ -63,23 +46,23 @@ $(window).load(function() {
     });
 
 
-
-
     let titles = document.querySelectorAll("#data a");
-    let descriptions = document.querySelectorAll("dd span");
+    // let descriptions = document.querySelectorAll("dd span");
     let titleFilm = document.querySelectorAll("dt");
+    let pictures = document.querySelectorAll(".planet")
+
+    let keyz = Object.keys(assets)
+    for (let z = 0; z < pictures.length; z++) {
+        pictures[z].style.backgroundImage = "url(" + assets[keyz[z + 1]]['pic'] + ")"
+    }
 
     let x = 0
 
     Object.keys(assets).forEach(key => {
-
         titles[x].innerHTML = assets[key]['title'];
-        descriptions[x].innerHTML = assets[key]['description'];
         titles[x].title = key
-        descriptions[x].title = key
-
         titleFilm[x].innerHTML = assets[key]['title'];
-        // planets[x].title = key
+
         x++
     });
 
@@ -196,7 +179,5 @@ $(window).load(function() {
         }
     })
 
-
-
-
+    $("#wait").fadeOut(2000)
 });
