@@ -27,15 +27,15 @@ $(window).load(function() {
 
 
     const icons = [
-        ['../circle.png', 'https://player.vimeo.com/video/352222024?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0'],
-        ['../circle.png', 'https://player.vimeo.com/video/352222024?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0'],
-        ['../circle.png', 'https://player.vimeo.com/video/352222024?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0'],
-        ['../circle.png', 'https://player.vimeo.com/video/352222024?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0'],
-        ['../circle.png', 'https://player.vimeo.com/video/352222024?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0'],
-        ['../circle.png', 'https://player.vimeo.com/video/352222024?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0'],
-        ['../circle.png', 'https://player.vimeo.com/video/352222024?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0'],
-        ['../circle.png', 'https://player.vimeo.com/video/352222024?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0'],
-        ['../circle.png', 'https://player.vimeo.com/video/352222024?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0'],
+        ['../circle.png', 'https://player.vimeo.com/video/352222024?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0', 'titleeee'],
+        ['../circle.png', 'https://player.vimeo.com/video/352222024?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0', 'titleeee'],
+        ['../circle.png', 'https://player.vimeo.com/video/352222024?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0', 'titleeee'],
+        ['../circle.png', 'https://player.vimeo.com/video/352222024?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0', 'titleeee'],
+        ['../circle.png', 'https://player.vimeo.com/video/352222024?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0', 'titleeee'],
+        ['../circle.png', 'https://player.vimeo.com/video/352222024?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0', 'titleeee'],
+        ['../circle.png', 'https://player.vimeo.com/video/352222024?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0', 'titleeee'],
+        ['../circle.png', 'https://player.vimeo.com/video/352222024?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0', 'titleeee'],
+        ['../circle.png', 'https://player.vimeo.com/video/352222024?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0', 'titleeee'],
 
     ]
 
@@ -116,6 +116,7 @@ $(window).load(function() {
             dude.speed = 0
             app.ticker.stop()
             $("#hello").fadeOut()
+            $("#player p").append(icon[2])
             document.getElementById("closePlayer").addEventListener("click", function() {
                 $("#player").fadeOut()
                 $("#antiplayer").fadeOut()

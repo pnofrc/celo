@@ -2116,11 +2116,25 @@ h1 {
     #universe {
         font-size: 20%;
     }
+    #hello {
+        top: 80%;
+        right: 5%;
+    }
+    #hello i {
+        text-align: right
+    }
 }
 
 @media screen and (min-width: 300px) {
     #universe {
         font-size: 24%;
+    }
+    #hello {
+        top: 80%;
+        right: 5%;
+    }
+    #hello i {
+        text-align: right
     }
 }
 
@@ -2128,17 +2142,38 @@ h1 {
     #universe {
         font-size: 36%;
     }
+    #hello {
+        top: 80%;
+        right: 5%;
+    }
+    #hello i {
+        text-align: right
+    }
 }
 
 @media screen and (min-width: 600px) {
     #universe {
         font-size: 44%;
     }
+    #hello {
+        top: 80%;
+        right: 5%;
+    }
+    #hello i {
+        text-align: right
+    }
 }
 
 @media screen and (min-width: 760px) {
     #universe {
         font-size: 58%;
+    }
+    #hello {
+        top: 80%;
+        right: 5%;
+    }
+    #hello i {
+        text-align: right
     }
 }
 
@@ -2183,11 +2218,25 @@ h1 {
     .controls-close #controls {
         right: 10%;
     }
+    #toggle-controls {
+        right: 30px;
+    }
+    #hello {
+        top: 0;
+        left: 0;
+        width: 15%;
+    }
+    #hello i {
+        text-align: left;
+    }
 }
 
 @media screen and (min-width: 1300px) {
     #universe {
         font-size: 75%;
+    }
+    #toggle-controls {
+        right: 30px;
     }
 }
 
@@ -2197,5 +2246,8 @@ h1 {
     }
     .zoom-close .scale-d #solar-system {
         margin-left: -120%;
+    }
+    #toggle-controls {
+        right: 30px;
     }
 }
