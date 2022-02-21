@@ -51,20 +51,43 @@ $(window).load(function() {
     let titleFilm = document.querySelectorAll("dt");
     let pictures = document.querySelectorAll(".planet")
 
+    // gifs
     let keyz = Object.keys(assets)
     for (let z = 0; z < pictures.length; z++) {
-        pictures[z].style.backgroundImage = "url(" + assets[keyz[z + 1]]['pic'] + ")"
+        pictures[z].style.backgroundImage = "url(" + assets[keyz[z + 1]]['picSteady'] + ")"
+        pictures[z].title = keyz[z];
+        pictures[z].addEventListener("mouseover", event => {
+            pictures[z].style.backgroundImage = "url(" + assets[keyz[z + 1]]['pic'] + ")"
+        });
+        pictures[z].addEventListener("mouseout", event => {
+            pictures[z].style.backgroundImage = "url(" + assets[keyz[z + 1]]['picSteady'] + ")"
+        });
     }
 
+
+
     let x = 0
+
+
 
     Object.keys(assets).forEach(key => {
         titles[x].innerHTML = assets[key]['title'];
         titles[x].title = key
+            // titles[x].addEventListener("mouseover", event => {
+            //     console.log(`#${key} .planet`)
+            //         // document.querySelector(`#${key} .planet`).style.backgroundImage = "url(" + assets[keyz[z + 1]]['pic'] + ")"
+            // });
+            // titles[x].addEventListener("mouseout", event => {
+            //     // document.querySelector(`#${key} .planet`).style.backgroundImage = "url(" + assets[keyz[z + 1]]['pic'] + ")"
+            // });
         titleFilm[x].innerHTML = assets[key]['title'];
 
         x++
     });
+
+    // Bio
+    let sun = document.querySelector("#sun dt")
+    sun.innerHTML = assets['Bio']['bio']
 
 
     function stopAnimation() {
@@ -104,11 +127,24 @@ $(window).load(function() {
         closePlayer()
     })
 
-    $("#data a").click(function(e) {
-        var ref = $(this).attr("class");
-        var current = document.getElementsByClassName(ref)[0].title
+    // document.querySelectorAll('#data a').forEach(element => {
+    //     let tit = element.title
 
-        if (document.getElementsByClassName(ref)[0].classList[1] == 'active') {
+    //     element.addEventListener("mouseover", event => {
+    //         pictures[z].style.backgroundImage = "url(" + assets[keyz[z + 1]]['pic'] + ")"
+    //     });
+    //     element.addEventListener("mouseout", event => {
+    //         pictures[z].style.backgroundImage = "url(" + assets[keyz[z + 1]]['picSteady'] + ")"
+    //     });
+    // });
+
+
+    $("#data a").click(function(e) {
+
+        var ref = $(this).attr("class");
+        var current = this.title
+
+        if (this.classList[1] == 'active') {
             document.querySelector("iframe").src = assets[current]['link'];
             $("#player").fadeIn()
             $("#antiplayer").fadeIn()
@@ -118,10 +154,19 @@ $(window).load(function() {
                 current, "#" + current);
 
             stopAnimation()
+                // $(ref).css('background-image', `url(${assets[this.title]['picSteady']})`)
+            $(`#${ref} .planet`).css('background-image', `url(${assets[this.title]['picSteady']})`)
+
+
         } else {
             solarsys.removeClass().addClass(ref);
+            $(`.planet`).css('background-image', `url(${assets[this.title]['picSteady']})`)
+
             $(this).parent().find('a').removeClass('active');
             $(this).addClass('active');
+
+            $(`#${ref} .planet`).css('background-image', `url(${assets[this.title]['pic']})`)
+
         }
         e.preventDefault();
     });
@@ -130,8 +175,8 @@ $(window).load(function() {
 
     $(".orbit").click(function(e) {
         var ref = $(this).attr("id");
-        var current = document.getElementsByClassName(ref)[0].title
-
+        var current = this.title
+        console.log(current)
         if (document.getElementsByClassName(ref)[0].classList[1] == 'active') {
             document.querySelector("iframe").src = assets[current]['link'];
             $("#player").fadeIn()
@@ -140,13 +185,17 @@ $(window).load(function() {
             let stateObj = { id: current };
             window.history.replaceState(stateObj,
                 current, "#" + current);
+            $(`#${ref} .planet`).css('background-image', `url(${assets[current]['picSteady']})`)
 
             stopAnimation()
 
         } else {
             $("#data a").removeClass('active')
+            console.log(current)
+            $(`#${ref}`).css('background-image', `url(${assets[current]['picSteady']})`)
             solarsys.removeClass().addClass(ref);
             document.getElementsByClassName(ref)[0].classList.add('active')
+            $(`#${ref} .planet`).css('background-image', `url(${assets[current]['pic']})`)
         }
         e.preventDefault();
     });

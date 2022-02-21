@@ -1697,21 +1697,22 @@ dl.infos {
 dl.infos:before {
     position: absolute;
     content: '';
-    width: 15px;
+    width: 10px;
     height: 30px;
-    left: 15px;
+    left: 5px;
     bottom: 0;
     border-top: 1px solid white;
     border-left: 1px solid white;
     transform-style: preserve-3d;
-    transform: skew(-45deg, 0deg);
+    transform: skew(-30deg, 0deg);
     box-shadow: inset 1px 1px black;
 }
 
 dl.infos dt {
+    width: 300%;
     position: absolute;
-    left: 50px;
-    margin-bottom: 56px;
+    left: 25px;
+    /* margin-bottom: 56px; */
     bottom: 30px;
     color: #FFF;
     font-size: 32px;
