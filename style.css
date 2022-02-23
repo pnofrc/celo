@@ -253,7 +253,7 @@ style {
 }
 
 #sun .infos:hover {
-    cursor: alias;
+    pointer-events: none;
 }
 
 .sun {

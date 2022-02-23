@@ -27,15 +27,15 @@ $(window).load(function() {
 
 
     const icons = [
-        ['../circle.png', 'https://player.vimeo.com/video/352222024?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0', 'titleeee'],
-        ['../circle.png', 'https://player.vimeo.com/video/352222024?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0', 'titleeee'],
-        ['../circle.png', 'https://player.vimeo.com/video/352222024?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0', 'titleeee'],
-        ['../circle.png', 'https://player.vimeo.com/video/352222024?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0', 'titleeee'],
-        ['../circle.png', 'https://player.vimeo.com/video/352222024?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0', 'titleeee'],
-        ['../circle.png', 'https://player.vimeo.com/video/352222024?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0', 'titleeee'],
-        ['../circle.png', 'https://player.vimeo.com/video/352222024?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0', 'titleeee'],
-        ['../circle.png', 'https://player.vimeo.com/video/352222024?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0', 'titleeee'],
-        ['../circle.png', 'https://player.vimeo.com/video/352222024?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0', 'titleeee'],
+        ['../assets/circle.png', 'https://player.vimeo.com/video/352222024?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0', 'titleeee'],
+        ['../assets/circle.png', 'https://player.vimeo.com/video/352222024?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0', 'titleeee'],
+        ['../assets/circle.png', 'https://player.vimeo.com/video/352222024?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0', 'titleeee'],
+        ['../assets/circle.png', 'https://player.vimeo.com/video/352222024?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0', 'titleeee'],
+        ['../assets/circle.png', 'https://player.vimeo.com/video/352222024?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0', 'titleeee'],
+        ['../assets/circle.png', 'https://player.vimeo.com/video/352222024?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0', 'titleeee'],
+        ['../assets/circle.png', 'https://player.vimeo.com/video/352222024?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0', 'titleeee'],
+        ['../assets/circle.png', 'https://player.vimeo.com/video/352222024?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0', 'titleeee'],
+        ['../assets/circle.png', 'https://player.vimeo.com/video/352222024?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0', 'titleeee'],
 
     ]
 

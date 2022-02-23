@@ -1,4 +1,30 @@
+// Stop animations cazzo
+// rotazione orbite
+// assets
+// bio
+// mobile gifs
+
+
+
 $(window).load(function() {
+
+
+    function stopAnimation() {
+        document.getElementById("universe").getAnimations().forEach(
+            function(animation) {
+                animation.playbackRate = 0;
+            });
+    }
+
+    function startAnimtion() {
+        document.getAnimations().forEach(
+            function(animation) {
+                animation.playbackRate = 1;
+            });
+    }
+
+
+
 
     let hash = $(location).attr('hash').split('#').pop();
 
@@ -7,57 +33,34 @@ $(window).load(function() {
         $("#player").fadeIn()
         $("#antiplayer").fadeIn()
 
-
         setTimeout(function() {
-            document.getAnimations().forEach(
-                function(animation) {
-                    animation.playbackRate = 0;
-                });
+            stopAnimation()
         }, 3000)
     }
+
+
+
 
     $("#blackhole img").delay(2000).fadeIn(3000)
     $("#comet img").delay(2000).fadeIn(3000)
 
 
-    // document.getElementById("antiplayer").addEventListener("click", function() {
-
-    //     // document.getElementById("closePlayer").addEventListener('click', function() {
-    //     $("#player").fadeOut()
-    //     $("#antiplayer").fadeOut()
-    //     document.querySelector("iframe").src = '';
-
-    //     document.getAnimations().forEach(
-    //         function(animation) {
-    //             animation.playbackRate = 1;
-    //         }
-    //     );
-    // })
 
 
-    // document.getElementById("closePlayer").addEventListener('click', function() {
-    //     $("#player").fadeOut()
-    //     $("#antiplayer").fadeOut()
-    //     document.querySelector("iframe").src = '';
-    //     let stateObj = { id: 'home' };
-    //     window.history.replaceState(stateObj,
-    //         '', "/");
 
-    //     document.getAnimations().forEach(
-    //         function(animation) {
-    //             animation.playbackRate = 1;
-    //         }
-    //     );
-    // })
 
     document.getElementById("blackhole").addEventListener("click", function() {
-        alert("Tutti gli altri video qua")
+        window.open("./blackhole/", "_self")
     })
 
 
     document.querySelector('#sun').addEventListener('click', function() {
         window.open("https://www.instagram.com/marco.celotti", "_blank")
     })
+
+
+
+
 
     var body = $("body"),
         // universe = $("#universe"),
@@ -78,81 +81,113 @@ $(window).load(function() {
         e.preventDefault();
     });
 
-    $("#toggle-controls").click(function(e) {
-        body.toggleClass("controls-open controls-close");
-        e.preventDefault();
-    });
-
 
     let titles = document.querySelectorAll("#data a");
-    let descriptions = document.querySelectorAll("dd span");
     let titleFilm = document.querySelectorAll("dt");
-    console.log(titleFilm)
-        // let planets = document.querySelectorAll("planet");
+    let pictures = document.querySelectorAll(".planet")
 
+    // gifs
+    function gifs() {
+        let keyz = Object.keys(assets)
+
+        for (let z = 0; z < pictures.length; z++) {
+            pictures[z].title = keyz[z + 1];
+            pictures[z].style.backgroundImage = "url(assets/still/" + assets[keyz[z + 1]]['picSteady'] + ")"
+        }
+    }
+
+    let keyz = Object.keys(assets)
+    for (let z = 0; z < pictures.length; z++) {
+
+        pictures[z].title = keyz[z + 1];
+
+        pictures[z].style.backgroundImage = "url(assets/still/" + assets[keyz[z + 1]]['picSteady'] + ")"
+
+        pictures[z].addEventListener("mouseover", event => {
+            pictures[z].style.backgroundImage = "url(assets/gif/" + assets[keyz[z + 1]]['pic'] + ")"
+        });
+        pictures[z].addEventListener("mouseout", event => {
+            pictures[z].style.backgroundImage = "urlassets/still/(" + assets[keyz[z + 1]]['picSteady'] + ")"
+        });
+    }
+
+
+    // Contents
     let x = 0
 
     Object.keys(assets).forEach(key => {
-
         titles[x].innerHTML = assets[key]['title'];
-        descriptions[x].innerHTML = assets[key]['description'];
         titles[x].title = key
-        descriptions[x].title = key
-
         titleFilm[x].innerHTML = assets[key]['title'];
-        // planets[x].title = key
         x++
     });
 
+    // Bio
+    let sun = document.querySelector("#sun dt")
+    sun.innerHTML = assets['Bio']['bio']
 
-    function close() {
-        document.body.addEventListener('click', function(e) {
-            if (!e.target.classList.contains('player')) {
 
-                // $("#player").fadeOut()
-                // $("#antiplayer").fadeOut()
-                // document.querySelector("iframe").src = '';
-                // let stateObj = { id: 'home' };
-                // window.history.replaceState(stateObj,
-                //     '', "/");
 
-                // document.getAnimations().forEach(
-                //     function(animation) {
-                //         animation.playbackRate = 1;
-                //     }
-                // );
-            }
-        });
+
+    function cleanURL() {
+        document.querySelector("iframe").src = '';
+        let stateObj = { id: 'home' };
+        window.history.replaceState(stateObj,
+            '', "/");
     }
-    close()
-    var baseUrl = 'http://pnofrc.github.io/celo/#'
+
+    function closePlayer() {
+        $("#player").fadeOut()
+        $("#antiplayer").fadeOut()
+        document.querySelector("iframe").src = '';
+        cleanURL()
+        startAnimtion()
+    }
+
+    if (document.getElementById("player"))
+
+
+
+        document.getElementById("closePlayer").addEventListener('click', function() {
+        closePlayer()
+    })
+
+    document.getElementById("antiplayer").addEventListener("click", function() {
+        closePlayer()
+    })
+
+
+
+
 
     $("#data a").click(function(e) {
+
         var ref = $(this).attr("class");
-        var current = document.getElementsByClassName(ref)[0].title
-        var url = baseUrl + current
-        if (document.getElementsByClassName(ref)[0].classList[1] == 'active') {
+        var current = this.title
+
+        if (this.classList[1] == 'active') {
             document.querySelector("iframe").src = assets[current]['link'];
             $("#player").fadeIn()
             $("#antiplayer").fadeIn()
-                // window.location.replace(url);
+
             let stateObj = { id: current };
             window.history.replaceState(stateObj,
                 current, "#" + current);
 
-            document.getAnimations().forEach(
-                function(animation) {
-                    animation.playbackRate = 0;
-                });
+            stopAnimation()
 
-
-
+            $(`#${ref} .planet`).css('background-image', `url(assets/still/${assets[this.title]['picSteady']})`)
 
 
         } else {
             solarsys.removeClass().addClass(ref);
+            gifs()
             $(this).parent().find('a').removeClass('active');
             $(this).addClass('active');
+
+            $(`#${ref} .planet`).css('background-image', `url(assets/gif/${assets[this.title]['pic']})`)
+
+
         }
         e.preventDefault();
     });
@@ -161,35 +196,68 @@ $(window).load(function() {
 
     $(".orbit").click(function(e) {
         var ref = $(this).attr("id");
-        var current = document.getElementsByClassName(ref)[0].title
-        var url = baseUrl + current
+
+        let key = this.querySelector(".planet").title
+        var current = key
+
         if (document.getElementsByClassName(ref)[0].classList[1] == 'active') {
-            document.querySelector("iframe").src = assets[current]['link'];
+            document.querySelector("iframe").src = assets[key]['link'];
             $("#player").fadeIn()
             $("#antiplayer").fadeIn()
-                // window.location.replace(url);
+
+            stopAnimation()
+
             let stateObj = { id: current };
             window.history.replaceState(stateObj,
                 current, "#" + current);
 
 
-            document.getAnimations().forEach(
-                function(animation) {
-                    animation.playbackRate = 0;
-                });
-
-
-
-
 
         } else {
-            $("#data a").removeClass('active')
+
+            gifs()
+                // stopAnimation()
+                // console.log(current)
+
             solarsys.removeClass().addClass(ref);
+            $("#data a").removeClass('active')
             document.getElementsByClassName(ref)[0].classList.add('active')
+
+
+            $(`#${ref} .planet`).css('background-image', `url(assets/gif/${assets[key]['pic']})`)
+
         }
         e.preventDefault();
     });
 
     $(".set-zoom").click(function() { body.toggleClass("zoom-large zoom-close"); });
+
     init();
+
+
+    // RESPONSIVeNESS
+
+
+    let y = 0
+    if (window.innerHeight > window.innerWidth) {
+        $("#animationResp").fadeIn()
+
+        setTimeout(function() {
+            stopAnimation()
+        }, 5000)
+    }
+
+
+    window.addEventListener('resize', function() {
+        if (window.innerHeight > window.innerWidth) {
+            $("#animationResp").fadeIn()
+                // stopAnimation()
+        } else {
+            $("#animationResp").fadeOut()
+                // startAnimtion()
+        }
+    })
+
+    $("#wait").fadeOut(2000)
+
 });
