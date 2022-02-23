@@ -104,10 +104,17 @@ $(window).load(function() {
         pictures[z].style.backgroundImage = "url(assets/still/" + assets[keyz[z + 1]]['picSteady'] + ")"
 
         pictures[z].addEventListener("mouseover", event => {
+            // console.log(assets[keyz[z + 1]]['pic'])
+
+            for (let zz = 0; zz < pictures.length; zz++) {
+                pictures[zz].style.backgroundImage = "url(assets/still/(" + assets[keyz[zz + 1]]['picSteady'] + ")"
+                console.log(pictures[zz])
+            }
             pictures[z].style.backgroundImage = "url(assets/gif/" + assets[keyz[z + 1]]['pic'] + ")"
         });
         pictures[z].addEventListener("mouseout", event => {
-            pictures[z].style.backgroundImage = "urlassets/still/(" + assets[keyz[z + 1]]['picSteady'] + ")"
+            // console.log(assets[keyz[z + 1]]['picSteady'])
+            pictures[z].style.backgroundImage = "url(assets/still/(" + assets[keyz[z + 1]]['picSteady'] + ")"
         });
     }
 

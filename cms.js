@@ -1,7 +1,7 @@
 var assets = {
     'Bio': {
         'title': 'BIO',
-        'bio': 'Celo is an indipendet video maker and he teaches at the master of IED Milano'
+        'bio': "Marco Celotti è un regista di origini romagnole. Completata la sua formazione universitaria tra Bologna e Verona e un percorso lavorativo interamente nella moda, si trasferisce a Londra, dove inizia, come freelance, a filmare le sue prime campagne. Nel 2019 rientra in Italia e partecipa al Fashion Film Festival di Parigi ASVOFF11 vincendo il primo premio, col suo progetto personale “ALICE”. Trasferitosi a Milano, continua la sua professione di regista, dedicandosi al mondo del fashion. Il lockdown del 2020 lo costringe a rientrare a Cervia, in Romagna, dove, ad aprile, scrive il progetto “Otto e Leda”, pubblicato su Vogue Italia. Nel 2021 continua a specializzarsi nel genere della commedia, ottiene una cattedra allo Ied e crea il profilo milanosulset, alter ego della sua mente satirica."
             // 'link': '',
             // 'pic': ''
     },
@@ -9,49 +9,49 @@ var assets = {
         'title': 'MANUEL RITZ',
         'link': 'https://player.vimeo.com/video/352223101?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0',
         'pic': 'MANUEL-RITZ.gif',
-        'picSteady': 'MANUEL-RITZ.png'
+        'picSteady': 'MANUEL-RITZ.jpg'
     },
     'SimonaCorsellini': {
         'title': 'SIMONA CORSELLINI',
         'link': 'https://player.vimeo.com/video/400114006?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0',
         'pic': 'SIMONA-CORSELLINI.gif',
-        'picSteady': 'SIMONA-CORSELLINI.png'
+        'picSteady': 'SIMONA-CORSELLINI.jpg'
     },
     'RogerVivier': {
         'title': 'ROGER VIVIER',
         'link': 'https://player.vimeo.com/video/481229528?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0',
-        'pic': 'ROGER-VIVER.gif',
-        'picSteady': 'ROGER-VIVER.png'
+        'pic': 'ROGER-VIVIER.gif',
+        'picSteady': 'ROGER-VIVIER.jpg'
     },
     'Coltorti': {
         'title': 'COLTORTI',
         'link': 'https://player.vimeo.com/video/352222024?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0',
         'pic': 'COLTORTI.gif',
-        'picSteady': 'COLTORTI.png'
+        'picSteady': 'COLTORTI.jpg'
     },
     'DepartmentFiveSS21': {
         'title': 'Department Five SS21',
         'link': 'https://player.vimeo.com/video/535528039?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0',
         'pic': 'DepartmentFiveSS21.gif',
-        'picSteady': 'DepartmentFiveSS21.png'
+        'picSteady': 'DepartmentFiveSS21.jpg'
 
     },
     'Nike-Yoox': {
         'title': 'NIKE YOOX',
         'link': 'https://player.vimeo.com/video/496674956?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0&sidedock=0',
         'pic': 'NIKE-YOOX.gif',
-        'picSteady': 'NIKE-YOOX.png'
+        'picSteady': 'NIKE-YOOX.jpg'
     },
     'Womsh': {
         'title': 'WOMSH',
         'link': 'https://player.vimeo.com/video/569872956?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0',
         'pic': 'WOMSH.gif',
-        'picSteady': 'WOMSH.png'
+        'picSteady': 'WOMSH.jpg'
     },
     'Womsh2': {
         'title': 'WOMSH2',
         'link': 'https://player.vimeo.com/video/569872956?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0',
         'pic': 'WOMSH.gif',
-        'picSteady': 'WOMSH.png'
+        'picSteady': 'WOMSH.jpg'
     }
 }

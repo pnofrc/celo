@@ -27,18 +27,19 @@ $(window).load(function() {
 
 
     const icons = [
-        ['../assets/circle.png', 'https://player.vimeo.com/video/352222024?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0', 'titleeee'],
-        ['../assets/circle.png', 'https://player.vimeo.com/video/352222024?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0', 'titleeee'],
-        ['../assets/circle.png', 'https://player.vimeo.com/video/352222024?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0', 'titleeee'],
-        ['../assets/circle.png', 'https://player.vimeo.com/video/352222024?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0', 'titleeee'],
-        ['../assets/circle.png', 'https://player.vimeo.com/video/352222024?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0', 'titleeee'],
-        ['../assets/circle.png', 'https://player.vimeo.com/video/352222024?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0', 'titleeee'],
-        ['../assets/circle.png', 'https://player.vimeo.com/video/352222024?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0', 'titleeee'],
-        ['../assets/circle.png', 'https://player.vimeo.com/video/352222024?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0', 'titleeee'],
-        ['../assets/circle.png', 'https://player.vimeo.com/video/352222024?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0', 'titleeee'],
-
+        ['../assets/remains/COWBOY.png', '349877850', 'titleeee'],
+        ['../assets/remains/OTTO.png', '427459417', 'titleeee'],
+        ['../assets/remains/ALICE.png', '352222024', 'titleeee'],
+        ['../assets/remains/BOTTEGAVENETA.png', '419631146', 'titleeee'],
+        ['../assets/remains/OFFICINECREATIVE.png', '393895615', 'titleeee'],
+        ['../assets/remains/DEPFIVE.png', '368924668', 'titleeee'],
+        ['../assets/remains/COLTORTI.png', '481225660', 'titleeee'],
+        ['../assets/remains/GEB.png', '378528305', 'titleeee'],
+        ['../assets/remains/GEBsummer.png', '393900471', 'titleeee'],
+        ['../assets/remains/MEZULIC.png', '384494837', 'titleeee'],
+        ['../assets/remains/FF.png', '400112511', 'titleeee'],
+        ['../assets/remains/EAST.png', '364005329', 'titleeee'],
     ]
-
 
 
     icons.forEach(function(icon) {
@@ -50,7 +51,7 @@ $(window).load(function() {
 
 
         // set a random scale for the dude - no point them all being the same size!
-        dude.scale.set((innerHeight / 3000) + Math.random() * (innerHeight / 1200));
+        dude.scale.set((innerHeight / 7000) + Math.random() * (innerHeight / 4800));
         // dude.scale.set(innerHeight / 1500);
 
         // finally lets set the dude to be at a random positionmedia
@@ -82,21 +83,6 @@ $(window).load(function() {
         dude.on('pointerdown', onClick);
 
 
-
-
-
-
-        // function hover(element, enter, leave){
-        //     , enter)
-        //     element.addEventListener('mouseleave', leave)
-        //   }
-
-        // dude.on("mouseleave", function(event) {
-        //     app.ticker.start()
-        // });
-
-
-
         // finally we push the dude into the aliens array so it it can be easily accessed later
         aliens.push(dude);
 
@@ -106,7 +92,7 @@ $(window).load(function() {
 
         function onClick() {
 
-            document.querySelector("iframe").src = icon[1];
+            document.querySelector("iframe").src = "https://player.vimeo.com/video/" + icon[1] + "?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0";
             $("#player").fadeIn()
                 // $("canvas").fadeOut()
                 // $("canvas").fadeIn()
@@ -163,9 +149,9 @@ $(window).load(function() {
         for (let i = 0; i < aliens.length; i++) {
             const dude = aliens[i];
             dude.direction += dude.turningSpeed / 500;
-            dude.x += Math.sin(dude.direction) * dude.direction * Math.random();
+            dude.x += Math.sin(dude.direction) * dude.direction;
             dude.y += Math.cos(dude.direction) * dude.speed * Math.random();
-            dude.rotation = dude.direction - Math.PI * Math.random() * 0.0009;
+            dude.rotation = dude.direction - Math.PI * Math.random() * 0.003;
 
 
             // wrap the dudes by testing their boundsmedia.
