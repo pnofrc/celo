@@ -1,9 +1,7 @@
 var assets = {
     'Bio': {
         'title': 'BIO',
-        'bio': "Marco Celotti è un regista di origini romagnole. Completata la sua formazione universitaria tra Bologna e Verona e un percorso lavorativo interamente nella moda, si trasferisce a Londra, dove inizia, come freelance, a filmare le sue prime campagne. Nel 2019 rientra in Italia e partecipa al Fashion Film Festival di Parigi ASVOFF11 vincendo il primo premio, col suo progetto personale “ALICE”. Trasferitosi a Milano, continua la sua professione di regista, dedicandosi al mondo del fashion. Il lockdown del 2020 lo costringe a rientrare a Cervia, in Romagna, dove, ad aprile, scrive il progetto “Otto e Leda”, pubblicato su Vogue Italia. Nel 2021 continua a specializzarsi nel genere della commedia, ottiene una cattedra allo Ied e crea il profilo milanosulset, alter ego della sua mente satirica."
-            // 'link': '',
-            // 'pic': ''
+        'bio': 'Marco Celotti è un regista di origini romagnole.<br>Completata la sua formazione universitaria tra Bologna e Verona e un percorso lavorativo interamente nella moda, si trasferisce a Londra, dove inizia, come freelance, a filmare le sue prime campagne.<br>Nel 2019 rientra in Italia e partecipa al Fashion Film Festival di Parigi <i>ASVOFF11</i> vincendo il primo premio, col suo progetto personale “ALICE”.<br>Trasferitosi a Milano, continua la sua professione di regista, dedicandosi al mondo del fashion.<br>Il lockdown del 2020 lo costringe a rientrare a Cervia, in Romagna, dove, ad aprile, scrive il progetto “Otto e Leda”, pubblicato su Vogue Italia.<br>Nel 2021 continua a specializzarsi nel genere della commedia, ottiene una cattedra allo Ied e crea il profilo <a href="https://instagram.com/milanosulset" target="_blank">milanosulset</a>, alter ego della sua mente satirica. <br><br><br><a href="mailto:hello@marcocelotti.com">hello [at] marcocelotti.com</a><br><br><a href="https://www.instagram.com/marco.celotti" target="_blank">Instagram</a>'
     },
     'ManuelRitz': {
         'title': 'MANUEL RITZ',

@@ -29,10 +29,15 @@ $(window).load(function() {
     let hash = $(location).attr('hash').split('#').pop();
 
     if (hash) {
-        document.querySelector("iframe").src = assets[hash]['link'];
-        $("#player").fadeIn()
-        $("#antiplayer").fadeIn()
-
+        if (assets[hash]['bio']) {
+            document.getElementById("textSrc").innerHTML = assets[hash]['bio'];
+            $("iframe").css("display", "none")
+            document.body.style.setProperty('--playerOn', 'rgba(0,0,0,0.8');
+        } else {
+            document.querySelector("iframe").src = assets[hash]['link'];
+            $("#player").fadeIn()
+            $("#antiplayer").fadeIn()
+        }
         setTimeout(function() {
             stopAnimation()
         }, 3000)
@@ -54,9 +59,9 @@ $(window).load(function() {
     })
 
 
-    document.querySelector('#sun').addEventListener('click', function() {
-        window.open("https://www.instagram.com/marco.celotti", "_blank")
-    })
+    // document.querySelector('#sun').addEventListener('click', function() {
+    //     window.open("https://www.instagram.com/marco.celotti", "_blank")
+    // })
 
 
 
@@ -108,7 +113,7 @@ $(window).load(function() {
 
             for (let zz = 0; zz < pictures.length; zz++) {
                 pictures[zz].style.backgroundImage = "url(assets/still/(" + assets[keyz[zz + 1]]['picSteady'] + ")"
-                console.log(pictures[zz])
+                    // console.log(pictures[zz])
             }
             pictures[z].style.backgroundImage = "url(assets/gif/" + assets[keyz[z + 1]]['pic'] + ")"
         });
@@ -131,7 +136,7 @@ $(window).load(function() {
 
     // Bio
     let sun = document.querySelector("#sun dt")
-    sun.innerHTML = assets['Bio']['bio']
+    sun.innerHTML = assets['Bio']['title']
 
 
 
@@ -144,9 +149,13 @@ $(window).load(function() {
     }
 
     function closePlayer() {
+        document.body.style.setProperty('--playerOn', 'rgba(0,0,0,0.3');
+
+        $("iframe").css("display", "block")
         $("#player").fadeOut()
         $("#antiplayer").fadeOut()
         document.querySelector("iframe").src = '';
+        document.getElementById("textSrc").innerHTML = '';
         cleanURL()
         startAnimtion()
     }
@@ -173,7 +182,15 @@ $(window).load(function() {
         var current = this.title
 
         if (this.classList[1] == 'active') {
-            document.querySelector("iframe").src = assets[current]['link'];
+            if (assets[current]['bio']) {
+                document.getElementById("textSrc").innerHTML = assets[current]['bio'];
+                $("iframe").css("display", "none")
+                document.body.style.setProperty('--playerOn', 'rgba(0,0,0,0.8');
+
+
+            } else {
+                document.querySelector("iframe").src = assets[current]['link'];
+            }
             $("#player").fadeIn()
             $("#antiplayer").fadeIn()
 
