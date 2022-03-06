@@ -27,18 +27,18 @@ $(window).load(function() {
 
 
     const icons = [
-        ['../assets/remains/COWBOY.png', '349877850', 'titleeee'],
-        ['../assets/remains/OTTO.png', '427459417', 'titleeee'],
-        ['../assets/remains/ALICE.png', '352222024', 'titleeee'],
-        ['../assets/remains/BOTTEGAVENETA.png', '419631146', 'titleeee'],
-        ['../assets/remains/OFFICINECREATIVE.png', '393895615', 'titleeee'],
-        ['../assets/remains/DEPFIVE.png', '368924668', 'titleeee'],
-        ['../assets/remains/COLTORTI.png', '481225660', 'titleeee'],
-        ['../assets/remains/GEB.png', '378528305', 'titleeee'],
-        ['../assets/remains/GEBsummer.png', '393900471', 'titleeee'],
-        ['../assets/remains/MEZULIC.png', '384494837', 'titleeee'],
-        ['../assets/remains/FF.png', '400112511', 'titleeee'],
-        ['../assets/remains/EAST.png', '364005329', 'titleeee'],
+        ['../assets/remains/COWBOY.png', '349877850', 'COWBOY'],
+        ['../assets/remains/OTTO.png', '427459417', 'OTTO'],
+        ['../assets/remains/ALICE.png', '352222024', 'ALICE'],
+        ['../assets/remains/BOTTEGAVENETA.png', '419631146', 'BOTTEGA VENETA'],
+        ['../assets/remains/OFFICINECREATIVE.png', '393895615', 'OFFICINE CREATIVE'],
+        ['../assets/remains/DEPFIVE.png', '368924668', 'DEPFIVE'],
+        ['../assets/remains/COLTORTI.png', '481225660', 'COLTORTI'],
+        ['../assets/remains/GEB.png', '378528305', 'GEB'],
+        ['../assets/remains/GEBsummer.png', '393900471', 'GEB Summer'],
+        ['../assets/remains/MEZULIC.png', '384494837', 'MEZULIC'],
+        ['../assets/remains/FF.png', '400112511', 'FF'],
+        ['../assets/remains/EAST.png', '364005329', 'EAST'],
     ]
 
 
