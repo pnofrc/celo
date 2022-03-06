@@ -29,15 +29,25 @@ $(window).load(function() {
     let hash = $(location).attr('hash').split('#').pop();
 
     if (hash) {
+        // document.getElementById("textSrc").innerHTML = assets[hash]['bio'];
+
         if (assets[hash]['bio']) {
+            console.log("cd")
             document.getElementById("textSrc").innerHTML = assets[hash]['bio'];
+            $("#player").css("display", "block")
+
+            $("#textSrc").css("display", "block")
             $("iframe").css("display", "none")
+            $("#data").css("display", "none")
+
             document.body.style.setProperty('--playerOn', 'rgba(0,0,0,0.8');
+
         } else {
             document.querySelector("iframe").src = assets[hash]['link'];
             $("#player").fadeIn()
             $("#antiplayer").fadeIn()
         }
+        closeBackground()
         setTimeout(function() {
             stopAnimation()
         }, 3000)
@@ -60,7 +70,18 @@ $(window).load(function() {
 
 
     // document.querySelector('#sun').addEventListener('click', function() {
-    //     window.open("https://www.instagram.com/marco.celotti", "_blank")
+    //     // var ref = $(this).attr("class");
+    //     // var current = this.title
+    //     solarsys.removeClass().addClass('sun');
+    //     gifs()
+    //     $(".planet").parent().find('a').removeClass('active');
+    //     $('.sunistainsta').addClass('active');
+
+    //     // $(`#${ref} .planet`).css('background-image', `url(assets/gif/${assets[this.title]['pic']})`)
+
+
+    //     //     window.open("https://www.instagram.com/marco.celotti", "_blank")
+    //     console.log('sun')
     // })
 
 
@@ -151,6 +172,8 @@ $(window).load(function() {
     function closePlayer() {
         document.body.style.setProperty('--playerOn', 'rgba(0,0,0,0.3');
 
+        $("#galaxy").fadeIn()
+
         $("iframe").css("display", "block")
         $("#player").fadeOut()
         $("#antiplayer").fadeOut()
@@ -158,6 +181,12 @@ $(window).load(function() {
         document.getElementById("textSrc").innerHTML = '';
         cleanURL()
         startAnimtion()
+        $("#textSrc").css("display", "none")
+
+        // $("#galaxy").fadeIn()
+        $("#hello").fadeIn()
+        $("#data").css("display", "block")
+
     }
 
     if (document.getElementById("player"))
@@ -168,12 +197,16 @@ $(window).load(function() {
         closePlayer()
     })
 
-    document.getElementById("antiplayer").addEventListener("click", function() {
-        closePlayer()
-    })
+    // document.getElementById("antiplayer").addEventListener("click", function() {
+    //     closePlayer()
+    // })
 
 
-
+    function closeBackground() {
+        $("#galaxy").css("display", "none")
+        $("#hello").css("display", "none")
+        $("#data").css("display", "none")
+    }
 
 
     $("#data a").click(function(e) {
@@ -185,14 +218,20 @@ $(window).load(function() {
             if (assets[current]['bio']) {
                 document.getElementById("textSrc").innerHTML = assets[current]['bio'];
                 $("iframe").css("display", "none")
-                document.body.style.setProperty('--playerOn', 'rgba(0,0,0,0.8');
+                $("#textSrc").css("display", "block")
+
+                // document.getElementById("antiplayer").style.setProperty('background-color', 'var(--background)');
 
 
             } else {
                 document.querySelector("iframe").src = assets[current]['link'];
             }
             $("#player").fadeIn()
-            $("#antiplayer").fadeIn()
+                // $("#antiplayer").fadeIn()
+
+            closeBackground()
+
+
 
             let stateObj = { id: current };
             window.history.replaceState(stateObj,
@@ -217,17 +256,26 @@ $(window).load(function() {
     });
 
 
-
-    $(".orbit").click(function(e) {
+    $("#sun").click(function(e) {
         var ref = $(this).attr("id");
 
-        let key = this.querySelector(".planet").title
+        let key = "Bio"
         var current = key
 
         if (document.getElementsByClassName(ref)[0].classList[1] == 'active') {
-            document.querySelector("iframe").src = assets[key]['link'];
+            if (assets[current]['bio']) {
+                document.getElementById("textSrc").innerHTML = assets[current]['bio'];
+                $("iframe").css("display", "none")
+                    // document.getElementById("antiplayer").style.setProperty('background-color', 'var(--background)');
+                $("#textSrc").css("display", "block")
+
+
+            } else {
+                document.querySelector("iframe").src = assets[current]['link'];
+            }
+
             $("#player").fadeIn()
-            $("#antiplayer").fadeIn()
+                // $("#antiplayer").fadeIn()
 
             stopAnimation()
 
@@ -235,7 +283,51 @@ $(window).load(function() {
             window.history.replaceState(stateObj,
                 current, "#" + current);
 
+            closeBackground()
 
+        } else {
+
+            gifs()
+                // stopAnimation()
+                // console.log(current)
+
+            solarsys.removeClass().addClass(ref);
+            $("#data a").removeClass('active')
+            document.getElementsByClassName(ref)[0].classList.add('active')
+
+
+            $(`#${ref} .planet`).css('background-image', `url(assets/gif/${assets[key]['pic']})`)
+
+        }
+        e.preventDefault();
+    })
+    $(".orbit").click(function(e) {
+        // console.log('ao')
+        var ref = $(this).attr("id");
+
+        let key = this.querySelector(".planet").title
+        var current = key
+
+        if (document.getElementsByClassName(ref)[0].classList[1] == 'active') {
+            // if (assets[current]['bio']) {
+            //     document.getElementById("textSrc").innerHTML = assets[current]['bio'];
+            //     $("iframe").css("display", "none")
+            //     document.getElementById("antiplayer").style.setProperty('background-color', 'var(--background)');
+
+            // } else {
+            document.querySelector("iframe").src = assets[current]['link'];
+            // }
+
+            $("#player").fadeIn()
+                // $("#antiplayer").fadeIn()
+
+            stopAnimation()
+
+            let stateObj = { id: current };
+            window.history.replaceState(stateObj,
+                current, "#" + current);
+
+            closeBackground()
 
         } else {
 
@@ -254,7 +346,7 @@ $(window).load(function() {
         e.preventDefault();
     });
 
-    $(".set-zoom").click(function() { body.toggleClass("zoom-large zoom-close"); });
+    // $(".set-zoom").click(function() { body.toggleClass("zoom-large zoom-close"); });
 
     init();
 
