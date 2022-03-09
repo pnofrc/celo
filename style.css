@@ -421,7 +421,7 @@ iframe {
     position: absolute;
     top: 50%;
     left: 50%;
-    border: .45vw dashed var(--orbits);
+    border: 3px solid var(--orbits);
     border-radius: 50%;
     transform-style: preserve-3d;
     animation-iteration-count: infinite;
@@ -574,10 +574,10 @@ iframe {
 
 @keyframes orbit2 {
     0% {
-        transform: rotateZ(0deg) rotateY(6deg);
+        transform: rotateZ(0deg) rotateY(4deg);
     }
     100% {
-        transform: rotateZ(-360deg) rotateY(2deg);
+        transform: rotateZ(-360deg) rotateY(0deg);
     }
 }
 
@@ -619,7 +619,7 @@ iframe {
 
 @keyframes orbit7 {
     0% {
-        transform: rotateZ(0deg) rotateY(5deg);
+        transform: rotateZ(0deg) rotateY(6deg);
     }
     100% {
         transform: rotateZ(-360deg) rotateY(-2deg);
@@ -898,8 +898,8 @@ iframe {
 .scale-stretched #earth.orbit {
     width: 110em;
     height: 110em;
-    margin-top: -55em;
-    margin-left: -55em;
+    margin-top: -45em;
+    margin-left: -45em;
 }
 
 
@@ -957,7 +957,7 @@ iframe {
 /* .scaled.view-2D #mercury .planet, */
 
 .scaled.view-3D #mercury .planet {
-    box-shadow: inset -4px 0 2px rgba(0, 0, 0, 0.5);
+    /* box-shadow: inset -4px 0 2px rgba(0, 0, 0, 0.5); */
     /* RIGHT */
 }
 
@@ -981,8 +981,8 @@ iframe {
 /* --------------------------------------------------------------------------- earth ; pos: Right */
 
 #earth .pos {
-    left: 100%;
-    top: 50%;
+    left: 0%;
+    top: 40%;
 }
 
 
@@ -1007,7 +1007,7 @@ iframe {
 /* --------------------------------------------------------------------------- mars ; pos: Bottom */
 
 #mars .pos {
-    left: 50%;
+    right: 20%;
     top: 100%;
 }
 
@@ -1077,7 +1077,7 @@ shadow-saturn-ring{ 0%   { box-shadow: inset -16px  0      4px   rgba(20, 40, 50
 /* --------------------------------------------------------------------------- uranus ; pos: Left */
 
 #uranus .pos {
-    left: 0;
+    left: 100%;
     top: 50%;
 }
 
