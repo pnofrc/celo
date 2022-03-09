@@ -1,3 +1,22 @@
+let toggle = document.getElementById("toggle-controls");
+toggle.addEventListener("click", function() {
+    checkTheme()
+})
+
+let store = localStorage.length
+
+if (store === 0) {
+
+    localStorage.setItem('theme', 'light')
+    toggle.innerHTML = "-> Dark"
+
+} else if (localStorage.getItem('theme') == 'dark') {
+    dark()
+} else if (localStorage.getItem('theme') == 'light') {
+    light()
+}
+
+
 function light() {
     document.body.style.setProperty('--background', 'white');
     document.body.style.setProperty('--orbits', 'rgb(255,136,0)');
@@ -37,28 +56,6 @@ function dark() {
 
 
 
-if (localStorage.lenght === 0) {
-    alert('click everything :)')
-    localStorage.setItem('theme') == 'light'
-        // document.getElementById("cometImg").classList.add('invert');
-        // document.getElementById("blackholeImg").classList.add('invert');
-    document.getElementById("toggle-controls").innerHTML = "-> Dark"
-
-} else if (localStorage.getItem('theme') == 'dark') {
-    dark()
-
-
-} else if (localStorage.getItem('theme') == 'light') {
-    light()
-
-}
-
-
-let toggle = document.getElementById("toggle-controls");
-toggle.addEventListener("click", function() {
-    checkTheme()
-
-})
 
 function checkTheme() {
 

@@ -1287,6 +1287,7 @@ h1 span,
 
 #toggle-data {
     left: 0;
+    color: var(--toggle)
 }
 
 #toggle-controls {
