@@ -369,9 +369,9 @@ iframe {
     display: block;
     background-color: var(--shadow);
     color: var(--background);
-    width: 8%;
+    width: 7%;
     height: 5%;
-    right: 5%;
+    right: 3%;
     font-size: 20px;
     /* padding-left: .5%; */
 }
@@ -481,6 +481,7 @@ iframe {
 .planet {
     /*  background-color: red; */
     background-repeat: no-repeat;
+    background-position: center center;
     background-size: cover;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
@@ -1344,6 +1345,7 @@ h1 span,
 
 #toggle-controls {
     right: 0;
+    color: var(--toggle);
 }
 
 #play_stop {

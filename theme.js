@@ -1,21 +1,19 @@
 let toggle = document.getElementById("toggle-controls");
-toggle.addEventListener("click", function() {
-    checkTheme()
-})
-
 let store = localStorage.length
 
 if (store === 0) {
-
-    localStorage.setItem('theme', 'light')
-    toggle.innerHTML = "&#8594; Dark"
-
+    localStorage.setItem('theme', 'dark')
+    toggle.innerHTML = "&#8594; Light"
+    dark()
 } else if (localStorage.getItem('theme') == 'dark') {
     dark()
 } else if (localStorage.getItem('theme') == 'light') {
     light()
 }
 
+toggle.addEventListener("click", function() {
+    checkTheme()
+})
 
 function light() {
     document.body.style.setProperty('--background', 'white');

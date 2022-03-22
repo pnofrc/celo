@@ -1,17 +1,5 @@
-// Stop animations cazzo
-// rotazione orbite
-// assets
-// bio
-// mobile gifs
-
-
-
 $(window).load(function() {
-
-
-
     var body = $("body"),
-        // universe = $("#universe"),
         solarsys = $("#solar-system");
 
     let titles = document.querySelectorAll("#data a");
@@ -25,13 +13,11 @@ $(window).load(function() {
         });
     };
 
-
     function closeBackground() {
         $("#universe").css("display", "none")
         $("#hello").css("display", "none")
         $("#data").css("display", "none")
     }
-
 
     // Check if there is an anchor link in the URL
     let hash = $(location).attr('hash').split('#').pop();
@@ -78,7 +64,6 @@ $(window).load(function() {
     // reset gifs
     function gifs() {
         let keyz = Object.keys(assets)
-
         for (let z = 0; z < pictures.length; z++) {
             pictures[z].title = keyz[z + 1];
             pictures[z].style.backgroundImage = "url(assets/still/" + assets[keyz[z + 1]]['picSteady'] + ")"
@@ -305,13 +290,14 @@ $(window).load(function() {
         $("#animationResp").fadeIn()
     }
 
+
     window.addEventListener('resize', function() {
         if (window.innerHeight > window.innerWidth) {
             $("#animationResp").fadeIn()
 
         } else {
             $("#animationResp").fadeOut()
-
+            document.getElementById('fake').click();
         }
     })
 
