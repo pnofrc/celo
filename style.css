@@ -841,16 +841,33 @@ iframe {
     font-size: 20em;
 }
 
+#sun:hover {
+    width: 1.5em;
+    height: 1.5em
+}
+
 .scale-stretched #mercury .planet {
     font-size: 10.5em;
+}
+
+#mercury .planet:hover {
+    font-size: 30em;
 }
 
 .scale-stretched #venus .planet {
     font-size: 12.72em;
 }
 
+#venus .planet:hover {
+    font-size: 30em;
+}
+
 .scale-stretched #earth .planet {
     font-size: 14.92em;
+}
+
+#earth .planet:hover {
+    font-size: 30em;
 }
 
 
@@ -862,20 +879,40 @@ iframe {
     font-size: 16.9em;
 }
 
+#mars .planet:hover {
+    font-size: 30em;
+}
+
 .scale-stretched #jupiter .planet {
     font-size: 18em;
+}
+
+#jupiter .planet:hover {
+    font-size: 30em;
 }
 
 .scale-stretched #saturn .planet {
     font-size: 19.8em;
 }
 
+#saturn .planet:hover {
+    font-size: 30em;
+}
+
 .scale-stretched #uranus .planet {
     font-size: 20.68em;
 }
 
+#uranus .planet:hover {
+    font-size: 30em;
+}
+
 .scale-stretched #neptune .planet {
     font-size: 24.9em;
+}
+
+#neptune .planet:hover {
+    font-size: 35em;
 }
 
 
@@ -1290,8 +1327,17 @@ h1 span,
     color: var(--toggle)
 }
 
+#toggle-info {
+    right: 10%;
+    color: var(--toggle)
+}
+
 #toggle-controls {
     right: 0;
+}
+
+#play_stop {
+    right: 15%;
 }
 
 #data,
@@ -1398,11 +1444,11 @@ h1 span,
 #sun,
 .planet,
 .satelite {
-    transition-delay: 1s;
+    transition-delay: .1s;
 }
 
 .pos {
-    transition-delay: 1s;
+    transition-delay: .1s;
 }
 
 .opening #solar-system,
@@ -1441,7 +1487,7 @@ h1 {
 }
 
 #controls {
-    transition-delay: 1s;
+    transition-delay: .5s;
 }
 
 #wait {

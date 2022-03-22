@@ -108,6 +108,14 @@ $(window).load(function() {
                 $("#antiplayer").fadeOut()
                 document.querySelector("iframe").src = '';
                 dude.speed = 1
+                let avoid = document.getElementById("player")["innerText"].toString();
+                console.log(avoid)
+                $("#player p").each(function() {
+                    //highlight_words('going', this);
+                    var text = $(this).text();
+                    text = text.replace(text, "");
+                    $(this).html(text);
+                });
                 $("canvas").css("opacity", "1")
                 $("#hello").fadeIn()
                 app.ticker.start()

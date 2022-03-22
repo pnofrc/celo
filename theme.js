@@ -8,7 +8,7 @@ let store = localStorage.length
 if (store === 0) {
 
     localStorage.setItem('theme', 'light')
-    toggle.innerHTML = "-> Dark"
+    toggle.innerHTML = "&#8594; Dark"
 
 } else if (localStorage.getItem('theme') == 'dark') {
     dark()
@@ -32,7 +32,7 @@ function light() {
 
     localStorage.setItem('theme', 'light')
     console.log("light mode")
-    document.getElementById("toggle-controls").innerHTML = "-> Dark"
+    document.getElementById("toggle-controls").innerHTML = "&#8594; Dark"
 }
 
 function dark() {
@@ -47,7 +47,7 @@ function dark() {
     document.body.style.setProperty('--invert2', '1');
 
     document.body.style.setProperty('--shadowSun', 'rgba(252, 60, 255, 0.85)');
-    document.getElementById("toggle-controls").innerHTML = "-> Light"
+    document.getElementById("toggle-controls").innerHTML = "&#8594; Light"
 
 
     localStorage.setItem('theme', 'dark')

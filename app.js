@@ -37,6 +37,9 @@ $(window).load(function() {
     }
 
 
+
+
+
     // Check if there is an anchor link in the URL
     let hash = $(location).attr('hash').split('#').pop();
 
@@ -186,6 +189,30 @@ $(window).load(function() {
     //     closePlayer()
     // })
 
+    var anim = document.querySelectorAll('.orbit');
+    document.getElementById('play_stop').onclick = function() {
+        for (var i = 0; i < anim.length; i++) {
+            console.log(anim[i])
+            if (anim[i].style.animationPlayState == 'paused') {
+                anim[i].style.animationPlayState = 'running';
+            } else {
+                anim[i].style.animationPlayState = 'paused';
+            }
+        }
+    }
+
+    var anim2 = document.querySelectorAll('.planet');
+    var anim3 = document.querySelectorAll('.planet');
+    document.getElementById('play_stop').onclick = function() {
+        for (var i = 0; i < anim2.length; i++) {
+            console.log(anim2[i])
+            if (anim[i].style.animationPlayState == 'paused') {
+                anim[i].style.animationPlayState = 'running';
+            } else {
+                anim[i].style.animationPlayState = 'paused';
+            }
+        }
+    }
 
 
     // When click on menu films..
@@ -327,5 +354,7 @@ $(window).load(function() {
     })
 
     $("#wait").fadeOut(2000)
+
+
 
 });
