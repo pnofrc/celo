@@ -300,15 +300,18 @@ style {
         }
     } */
 
-#controls {
-    width: 5%;
-}
 
+/* #controls {
+    width: 5%;
+} */
+
+
+/* 
 #toggle button {
     background-color: var(--toggle);
     width: 200%;
     height: 100%;
-}
+} */
 
 #player {
     /* border: solid; */
@@ -369,7 +372,12 @@ iframe {
     width: 8%;
     height: 5%;
     right: 5%;
+    font-size: 20px;
     /* padding-left: .5%; */
+}
+
+#closePlayer span {
+    color: var(--toggle);
 }
 
 #closePlayer:hover {
@@ -1329,7 +1337,9 @@ h1 span,
 
 #toggle-info {
     right: 10%;
-    color: var(--toggle)
+    color: var(--toggle);
+    z-index: 100;
+    position: absolute;
 }
 
 #toggle-controls {
@@ -1589,7 +1599,7 @@ h1 {
     #navbar a#toggle-data {
         display: none;
     }
-    h1 {
+    e h1 {
         font-size: 22px;
         margin-top: 8px;
     }

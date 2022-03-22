@@ -32,13 +32,6 @@ $(window).load(function() {
         $("#data").css("display", "none")
     }
 
-    function openBackground() {
-
-    }
-
-
-
-
 
     // Check if there is an anchor link in the URL
     let hash = $(location).attr('hash').split('#').pop();
@@ -72,36 +65,12 @@ $(window).load(function() {
         window.open("./blackhole/", "_self")
     })
 
-    //Insta celo
-
-    // document.querySelector('#sun').addEventListener('click', function() {
-    //     // var ref = $(this).attr("class");
-    //     // var current = this.title
-    //     solarsys.removeClass().addClass('sun');
-    //     gifs()
-    //     $(".planet").parent().find('a').removeClass('active');
-    //     $('.sunistainsta').addClass('active');
-
-    //     // $(`#${ref} .planet`).css('background-image', `url(assets/gif/${assets[this.title]['pic']})`)
-
-
-    //     //     window.open("https://www.instagram.com/marco.celotti", "_blank")
-    //     console.log('sun')
-    // })
-
-
-
-
-    // var setView = function(view) { universe.removeClass().addClass(view); };
-
 
     // Toggle menu film responsive
     $("#toggle-data").click(function(e) {
         body.toggleClass("data-open data-close");
         e.preventDefault();
     });
-
-
 
 
     // COMPILE FROM DICTIONARIES
@@ -126,13 +95,18 @@ $(window).load(function() {
 
         pictures[z].addEventListener("mouseover", event => {
             for (let zz = 0; zz < pictures.length; zz++) {
-                pictures[zz].style.backgroundImage = "url(assets/still/(" + assets[keyz[zz + 1]]['picSteady'] + ")"
+                pictures[zz].style.backgroundImage = "url(assets/still/" + assets[keyz[zz + 1]]['picSteady'] + ")"
             }
             pictures[z].style.backgroundImage = "url(assets/gif/" + assets[keyz[z + 1]]['pic'] + ")"
         });
-        pictures[z].addEventListener("mouseout", event => {
-            pictures[z].style.backgroundImage = "url(assets/still/(" + assets[keyz[z + 1]]['picSteady'] + ")"
-        });
+        // pictures[z].addEventListener("mouseout", event => {
+
+        // pictures[z].style.backgroundImage = ""
+
+        // console.log(pictures[z].style.backgroundImage)
+
+        // console.log(`url(assets/still/${assets[keyz[z + 1]]['picSteady']})`)
+        // });
     }
 
 
@@ -189,30 +163,31 @@ $(window).load(function() {
     //     closePlayer()
     // })
 
-    var anim = document.querySelectorAll('.orbit');
-    document.getElementById('play_stop').onclick = function() {
-        for (var i = 0; i < anim.length; i++) {
-            console.log(anim[i])
-            if (anim[i].style.animationPlayState == 'paused') {
-                anim[i].style.animationPlayState = 'running';
-            } else {
-                anim[i].style.animationPlayState = 'paused';
-            }
-        }
-    }
+    // var anim = document.querySelectorAll('.orbit');
+    // document.getElementById('play_stop').onclick = function() {
+    //     for (var i = 0; i < anim.length; i++) {
+    //         console.log(anim[i])
+    //         if (anim[i].style.animationPlayState == 'paused') {
+    //             anim[i].style.animationPlayState = 'running';
+    //         } else {
+    //             anim[i].style.animationPlayState = 'paused';
+    //         }
+    //     }
+    // }
 
-    var anim2 = document.querySelectorAll('.planet');
-    var anim3 = document.querySelectorAll('.planet');
-    document.getElementById('play_stop').onclick = function() {
-        for (var i = 0; i < anim2.length; i++) {
-            console.log(anim2[i])
-            if (anim[i].style.animationPlayState == 'paused') {
-                anim[i].style.animationPlayState = 'running';
-            } else {
-                anim[i].style.animationPlayState = 'paused';
-            }
-        }
-    }
+    // var anim2 = document.querySelectorAll('.planet');
+    // var anim3 = document.querySelectorAll('.planet');
+    // document.getElementById('play_stop').onclick = function() {
+    //     for (var i = 0; i < anim2.length; i++) {
+    //         console.log(anim2[i])
+    //         if (anim[i].style.animationPlayState == 'paused') {
+    //             anim[i].style.animationPlayState = 'running';
+    //         } else {
+    //             anim[i].style.animationPlayState = 'paused';
+    //         }
+    //     }
+    // }
+
 
 
     // When click on menu films..
@@ -250,7 +225,6 @@ $(window).load(function() {
     });
 
 
-
     // When click on the orbit
     $(".orbit").click(function(e) {
         var ref = $(this).attr("id");
@@ -262,9 +236,7 @@ $(window).load(function() {
 
             document.querySelector("iframe").src = assets[current]['link'];
 
-
             $("#player").fadeIn()
-
 
             let stateObj = { id: current };
             window.history.replaceState(stateObj,
@@ -276,12 +248,9 @@ $(window).load(function() {
 
             gifs()
 
-            // console.log(current)
-
             solarsys.removeClass().addClass(ref);
             $("#data a").removeClass('active')
             document.getElementsByClassName(ref)[0].classList.add('active')
-
 
             $(`#${ref} .planet`).css('background-image', `url(assets/gif/${assets[key]['pic']})`)
 
@@ -301,6 +270,7 @@ $(window).load(function() {
         if (document.getElementsByClassName(ref)[0].classList[1] == 'active') {
             if (assets[current]['bio']) {
                 document.getElementById("textSrc").innerHTML = assets[current]['bio'];
+                gifs()
                 $("iframe").css("display", "none")
                 $("#textSrc").css("display", "block")
             } else {
@@ -322,26 +292,18 @@ $(window).load(function() {
             $("#data a").removeClass('active')
             document.getElementsByClassName(ref)[0].classList.add('active')
 
-
             $(`#${ref} .planet`).css('background-image', `url(assets/gif/${assets[key]['pic']})`)
 
         }
         e.preventDefault();
     })
 
-
-
     init();
 
-
-
-
     // Responsive
-
     if (window.innerHeight > window.innerWidth) {
         $("#animationResp").fadeIn()
     }
-
 
     window.addEventListener('resize', function() {
         if (window.innerHeight > window.innerWidth) {
@@ -354,7 +316,5 @@ $(window).load(function() {
     })
 
     $("#wait").fadeOut(2000)
-
-
 
 });

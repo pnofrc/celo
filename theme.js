@@ -37,7 +37,7 @@ function light() {
 
 function dark() {
     document.body.style.setProperty('--background', 'black');
-    document.body.style.setProperty('--orbits', 'rgb(123, 0, 255)');
+    document.body.style.setProperty('--orbits', 'white');
     document.body.style.setProperty('--selectedOrbit', 'violet');
     document.body.style.setProperty('--sun', 'magenta');
     document.body.style.setProperty('--toggle', 'white');
