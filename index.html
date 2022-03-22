@@ -23,7 +23,6 @@
     </script>
 
 
-
     <div id="animationResp">
         <img src="https://cdn.onlinewebfonts.com/svg/img_68281.png" alt="">
         <span>ROTATE THE DEVICE!</span></div>
@@ -36,7 +35,7 @@
         <a id="toggle-data" id="data"><i class="icon-data"></i>Film</a>
         <a id="toggle-controls"><i class="icon-controls"></i></a>
         <a id="toggle-info"><span onclick="alert('Welcome! Click and double click the planets or the film menu!')">Info</span></a>
-        <!-- <a id="play_stop">&#x23EF;</a>  -->
+        <a id='toggle-fullscreen'>Fullscreen</a>
     </div>
     <div id="data">
         <a class="sun active" title=""></a>
@@ -192,18 +191,6 @@
     </div>
 
     <div id="wait"></div>
-    <script>
-        function stopAnimation() {
-
-            document.getElementById("universe").getAnimations().forEach(
-                function(animation) {
-                    animation.playbackRate = 0;
-                })
-
-        };
-
-        stopAnimation()
-    </script>
 
     <script src="jquery.min.js"></script>
     <script src="cms.js" async defer></script>

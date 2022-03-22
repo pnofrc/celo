@@ -1337,7 +1337,7 @@ h1 span,
 }
 
 #toggle-info {
-    right: 10%;
+    right: 8%;
     color: var(--toggle);
     z-index: 100;
     position: absolute;
@@ -1348,9 +1348,15 @@ h1 span,
     color: var(--toggle);
 }
 
-#play_stop {
-    right: 15%;
+#toggle-fullscreen {
+    right: 12%;
+    color: var(--toggle);
 }
+
+
+/* #play_stop {
+    right: 15%;
+} */
 
 #data,
 #controls {
@@ -1529,6 +1535,16 @@ h1 {
     #hello i {
         text-align: right
     }
+    #toggle-info {
+        right: 18%;
+        color: var(--toggle);
+    }
+    #toggle-controls {
+        right: 0;
+    }
+    #toggle-fullscreen {
+        right: 20%;
+    }
 }
 
 @media screen and (min-width: 300px) {
@@ -1542,6 +1558,16 @@ h1 {
     #hello i {
         text-align: right
     }
+    #toggle-info {
+        right: 16%;
+        color: var(--toggle);
+    }
+    #toggle-controls {
+        right: 0;
+    }
+    #toggle-fullscreen {
+        right: 24%;
+    }
 }
 
 @media screen and (min-width: 500px) {
@@ -1554,6 +1580,16 @@ h1 {
     }
     #hello i {
         text-align: right
+    }
+    #toggle-info {
+        right: 13%;
+        color: var(--toggle);
+    }
+    #toggle-controls {
+        right: 0;
+    }
+    #toggle-fullscreen {
+        right: 21%;
     }
 }
 
