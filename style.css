@@ -366,12 +366,12 @@ iframe {
 }
 
 #closePlayer {
-    border: solid;
-    border-radius: 50%;
+    /* border: none; */
+    /* border-radius: 50%; */
     position: fixed;
     z-index: 101;
     display: block;
-    background-color: var(--shadow);
+    background-color: transparent;
     color: var(--background);
     width: 7%;
     height: 5%;
@@ -386,8 +386,6 @@ iframe {
 
 #closePlayer:hover {
     cursor: pointer;
-    background-color: var(--background);
-    color: var(--active);
 }
 
 #antiplayer {
@@ -737,9 +735,10 @@ iframe {
     animation-name: orbit0;
 }
 
-#mercury.orbit:hover {
+
+/* #mercury.orbit:hover {
     animation-play-state: paused;
-}
+} */
 
 #venus .pos,
 #venus .planet,
@@ -751,9 +750,10 @@ iframe {
     animation-name: orbit1;
 }
 
-#venus.orbit:hover {
+
+/* #venus.orbit:hover {
     animation-play-state: paused;
-}
+} */
 
 #earth .pos,
 #earth .planet,
@@ -770,9 +770,10 @@ iframe {
     animation-name: orbit2;
 }
 
-#earth.orbit:hover {
+
+/* #earth.orbit:hover {
     animation-play-state: paused;
-}
+} */
 
 #mars .pos,
 #mars .planet,
@@ -784,9 +785,10 @@ iframe {
     animation-name: orbit3;
 }
 
-#mars.orbit:hover {
+
+/* #mars.orbit:hover {
     animation-play-state: paused;
-}
+} */
 
 #jupiter .pos,
 #jupiter .planet,
@@ -798,9 +800,10 @@ iframe {
     animation-name: orbit4;
 }
 
-#juputer.orbit:hover {
+
+/* #juputer.orbit:hover {
     animation-play-state: paused;
-}
+} */
 
 #saturn .pos,
 #saturn .planet,
@@ -812,9 +815,10 @@ iframe {
     animation-name: orbit5;
 }
 
-#saturn.orbit:hover {
+
+/* #saturn.orbit:hover {
     animation-play-state: paused;
-}
+} */
 
 #uranus .pos,
 #uranus .planet,
@@ -826,9 +830,11 @@ iframe {
     animation-name: orbit6;
 }
 
+
+/* 
 #uranus.orbit:hover {
     animation-play-state: paused;
-}
+} */
 
 #neptune .pos,
 #neptune .planet,
@@ -840,9 +846,10 @@ iframe {
     animation-name: orbit7;
 }
 
-#neptune.orbit:hover {
+
+/* #neptune.orbit:hover {
     animation-play-state: paused;
-}
+} */
 
 
 /* --------------------------------------------------------------------------- planets sizes */
@@ -1573,6 +1580,10 @@ h1 {
     #toggle-fullscreen {
         right: 24%;
     }
+    #closePlayer {
+        width: 15%;
+        height: 10%;
+    }
 }
 
 @media screen and (min-width: 500px) {
@@ -1611,6 +1622,10 @@ h1 {
     #hello i {
         text-align: right
     }
+    #closePlayer {
+        width: 15%;
+        height: 10%;
+    }
 }
 
 @media screen and (min-width: 760px) {
@@ -1624,6 +1639,10 @@ h1 {
     }
     #hello i {
         text-align: right
+    }
+    #closePlayer {
+        width: 15%;
+        height: 10%;
     }
 }
 
@@ -1691,6 +1710,10 @@ h1 {
         left: 0;
         /* width: 15%; */
         text-align: left;
+    }
+    #closePlayer {
+        width: 10%;
+        height: 6%;
     }
 }
 
