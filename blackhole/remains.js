@@ -1,14 +1,33 @@
 $(window).load(function() {
+    function toggleFullScreen() {
+        var doc = window.document;
+        var docEl = doc.documentElement;
 
-    // setTimeout(function() {
-    //     $("canvas").fadeOut(1000)
-    //     setTimeout(function() {
-    //         location.reload()
+        var requestFullScreen =
+            docEl.requestFullscreen ||
+            docEl.mozRequestFullScreen ||
+            docEl.webkitRequestFullScreen ||
+            docEl.msRequestFullscreen;
+        var cancelFullScreen =
+            doc.exitFullscreen ||
+            doc.mozCancelFullScreen ||
+            doc.webkitExitFullscreen ||
+            doc.msExitFullscreen;
 
-    //     }, 1000)
+        if (!doc.fullscreenElement &&
+            !doc.mozFullScreenElement &&
+            !doc.webkitFullscreenElement &&
+            !doc.msFullscreenElement
+        ) {
+            requestFullScreen.call(docEl);
+        } else {
+            cancelFullScreen.call(doc);
+        }
+    }
 
-    // }, 60000)
-
+    document.getElementById("toggle-fullscreen").addEventListener("click", event => {
+        toggleFullScreen()
+    })
 
     const app = new PIXI.Application({
         // pixiWasLoaded: true,

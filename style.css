@@ -137,17 +137,21 @@ style {
 }
 
 #hello {
+    padding: 1%;
     margin-left: 45px;
     position: absolute;
-    top: 0;
+    margin-top: 0;
     font-size: 28px;
-    color: var(--background);
-    filter: invert();
+    color: var(--toggle);
     z-index: 1;
 }
 
+#hello br {
+    margin-top: 0;
+}
+
 #hello a {
-    color: var(--background);
+    color: var(--toggle);
     /* text-decoration: none; */
     /* border-bottom: solid .2px var(--background); */
     /* vertical-align: top; */
@@ -726,7 +730,7 @@ iframe {
 #mercury .pos,
 #mercury .planet,
 #mercury.orbit {
-    animation-duration: 150s;
+    animation-duration: 350s;
 }
 
 #mercury.orbit {
@@ -740,7 +744,7 @@ iframe {
 #venus .pos,
 #venus .planet,
 #venus.orbit {
-    animation-duration: 300s;
+    animation-duration: 1300s;
 }
 
 #venus.orbit {
@@ -754,12 +758,12 @@ iframe {
 #earth .pos,
 #earth .planet,
 #earth.orbit {
-    animation-duration: 500s;
+    animation-duration: 2500s;
 }
 
 #earth .orbit .pos,
 #earth .orbit {
-    animation-duration: 500s;
+    animation-duration: 1500s;
 }
 
 #earth.orbit {
@@ -773,7 +777,7 @@ iframe {
 #mars .pos,
 #mars .planet,
 #mars.orbit {
-    animation-duration: 700s;
+    animation-duration: 1700s;
 }
 
 #mars.orbit {
@@ -787,7 +791,7 @@ iframe {
 #jupiter .pos,
 #jupiter .planet,
 #jupiter.orbit {
-    animation-duration: 950s;
+    animation-duration: 1350s;
 }
 
 #jupiter.orbit {
@@ -815,7 +819,7 @@ iframe {
 #uranus .pos,
 #uranus .planet,
 #uranus.orbit {
-    animation-duration: 1400s;
+    animation-duration: 2400s;
 }
 
 #uranus.orbit {
@@ -942,10 +946,10 @@ iframe {
 }
 
 .scale-stretched #earth.orbit {
-    width: 110em;
-    height: 110em;
-    margin-top: -45em;
-    margin-left: -45em;
+    width: 120em;
+    height: 120em;
+    margin-top: -60em;
+    margin-left: -60em;
 }
 
 
@@ -1325,7 +1329,7 @@ h1 span,
 
 #navbar a {
     position: absolute;
-    /* top: 5%; */
+    top: 0;
     height: 48px;
     padding: 1%;
     font-size: 20px;
@@ -1336,12 +1340,13 @@ h1 span,
     color: var(--toggle)
 }
 
-#toggle-info {
+
+/* #toggle-info {
     right: 8%;
     color: var(--toggle);
     z-index: 100;
     position: absolute;
-}
+} */
 
 #toggle-controls {
     right: 0;
@@ -1349,7 +1354,6 @@ h1 span,
 }
 
 #toggle-fullscreen {
-    right: 12%;
     color: var(--toggle);
 }
 
@@ -1535,36 +1539,37 @@ h1 {
     #hello i {
         text-align: right
     }
-    #toggle-info {
+    /* #toggle-info {
         right: 18%;
         color: var(--toggle);
-    }
-    #toggle-controls {
+    } */
+    /* #toggle-controls {
         right: 0;
     }
     #toggle-fullscreen {
         right: 20%;
-    }
+    } */
 }
 
 @media screen and (min-width: 300px) {
     #universe {
-        font-size: 14%;
+        font-size: 26%;
     }
     #hello {
         top: 80%;
-        right: 5%;
+        right: 1%;
+        text-align: right;
     }
     #hello i {
         text-align: right
     }
-    #toggle-info {
+    /* #toggle-info {
         right: 16%;
         color: var(--toggle);
-    }
-    #toggle-controls {
+    } */
+    /* #toggle-controls {
         right: 0;
-    }
+    } */
     #toggle-fullscreen {
         right: 24%;
     }
@@ -1575,21 +1580,23 @@ h1 {
         font-size: 26%;
     }
     #hello {
-        top: 80%;
-        right: 5%;
+        /* top: 80%; */
+        /* right: 5%; */
+        text-align: right;
+        padding: 0;
     }
     #hello i {
         text-align: right
     }
-    #toggle-info {
+    /* #toggle-info {
         right: 13%;
         color: var(--toggle);
-    }
+    } */
     #toggle-controls {
         right: 0;
     }
     #toggle-fullscreen {
-        right: 21%;
+        right: 6em;
     }
 }
 
@@ -1598,8 +1605,8 @@ h1 {
         font-size: 30%;
     }
     #hello {
-        top: 80%;
-        right: 5%;
+        margin-bottom: 80%;
+        /* right: 5%; */
     }
     #hello i {
         text-align: right
@@ -1609,10 +1616,11 @@ h1 {
 @media screen and (min-width: 760px) {
     #universe {
         font-size: 41%;
+        /* background-color: blue; */
     }
     #hello {
-        top: 80%;
-        right: 5%;
+        bottom: 20%;
+        /* right: 5%; */
     }
     #hello i {
         text-align: right
@@ -1622,6 +1630,14 @@ h1 {
 @media screen and (min-width: 960px) {
     #universe {
         font-size: 53%;
+    }
+    #hello {
+        /* border: solid; */
+        height: 10%;
+        position: absolute;
+        bottom: 1%;
+        padding: 1%;
+        right: 0;
     }
 }
 
@@ -1656,6 +1672,7 @@ h1 {
         display: inline-block;
         text-align: center;
         font-size: 20px;
+        line-height: 0;
         padding: 15px 15px;
     }
     .data-open #data,
@@ -1672,9 +1689,7 @@ h1 {
     #hello {
         top: 0;
         left: 0;
-        width: 15%;
-    }
-    #hello i {
+        /* width: 15%; */
         text-align: left;
     }
 }
@@ -1699,9 +1714,9 @@ h1 {
         right: 30px;
     }
     #hello {
-        top: -5%;
+        /* top: -5%; */
         left: 0;
-        width: 15%;
+        /* width: 15%; */
     }
     #hello i {
         text-align: left;
@@ -1710,7 +1725,7 @@ h1 {
 
 @media screen and (min-width: 1600px) {
     #universe {
-        font-size: 90%;
+        font-size: 100%;
     }
     .zoom-close .scale-d #solar-system {
         margin-left: -120%;
@@ -1721,9 +1736,5 @@ h1 {
     #hello {
         top: 0;
         left: 0;
-        width: 15%;
-    }
-    #hello i {
-        text-align: left;
     }
 }
