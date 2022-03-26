@@ -5,7 +5,8 @@ if (store === 0) {
     localStorage.setItem('theme', 'dark')
     toggle.innerHTML = "&#8594; Light"
     dark()
-    alert("Welcome. Double click on planets or on the films' titles to watch the videos!")
+    document.getElementById("welcome").style.setProperty("display","block")
+    // alert("Welcome. Double click on planets or on the films' titles to watch the videos!")
 } else if (localStorage.getItem('theme') == 'dark') {
     dark()
 } else if (localStorage.getItem('theme') == 'light') {

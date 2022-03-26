@@ -4,7 +4,7 @@
 
 
 fisheye
-for i in folder/*.png; do sh fisheye -o 90 -i 90 -t linear -f circular -m gray "$i" "${i%.*}.jpg"; done
+for i in folder/*.jpg; do sh fisheye -o 90 -i 90 -t linear -f circular -m gray "$i" "${i%.*}.jpg"; done
 
 
 -i  'folder/%04d.jpg' -framerate 24 -filter_complex  "fps=24,split=2[palette_in][gif];[palette_in]palettegen[palette_out];[gif]fifo[gif_fifo]; [gif_fifo][palette_out]paletteuse" -y image.gif

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -11,7 +11,7 @@
     <meta name="description" content="Marco Celotti è un regista di origini romagnole.">
     <meta name="designer" content="Federico Poni || Funix">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" rel="preload" href="style.css">
 
 </head>
 
@@ -22,9 +22,11 @@
         0
     </script>
 
+    <div id="welcome"><p>Welcome.<br>Double click on planets or on the films' titles to watch the videos!</p><button id="welcomeButton">Enter</button></div>
+
 
     <div id="animationResp">
-        <img src="roll.png" alt="">
+        <img src="roll.png" alt="Rolling">
         <span>ROTATE THE DEVICE!</span></div>
 
     <span id="hello">Marco Celotti<br><i>in arte Celo.</i></span>
@@ -35,7 +37,7 @@
         <a id="toggle-data" id="data"><i class="icon-data"></i>Film</a>
         <a id="toggle-controls"><i class="icon-controls"></i></a>
         <!-- <a id="toggle-info"><span onclick="alert('Welcome! Click and double click the planets or the film menu!')">Info</span></a> -->
-        <a id='toggle-fullscreen'>&#8594; Fullscreen</a>
+        <a id='toggle-fullscreen'>&#10023; Fullscreen</a>
     </div>
     <div id="data">
         <a class="sun active" title=""></a>
@@ -58,7 +60,7 @@
     </div> -->
 
     <div id="player">
-        <button id="closePlayer"> <span>Close</span> </button>
+        <span id="closePlayer">&#8999;</span>
         <iframe id="playerSrc" src="" frameborder="0" allow="fullscreen;" color="#0f0" allowfullscreen></iframe>
         <div id="textSrc"></div>
     </div>
@@ -69,7 +71,7 @@
         <div id="galaxy">
 
             <div id="comet">
-                <a href="https://instagram.com/milanosulset" target="_blank">
+                <a rel="noreferrer" href="https://instagram.com/milanosulset" target="_blank">
                     <img src="comet.png" alt=""></a>
             </div>
 
@@ -192,7 +194,8 @@
 
     <div id="wait"></div>
 
-    <script src="jquery.min.js"></script>
+    <script src="jquery.min.jsm.js"></script>
+
     <script src="cms.js" async defer></script>
     <script src="app.js" async defer></script>
     <script src="theme.js"></script>
