@@ -46,10 +46,10 @@ var assets = {
         'pic': 'WOMSH.gif',
         'picSteady': 'WOMSH.jpg'
     },
-    'Womsh2': {
-        'title': 'WOMSH2',
+    'Airmax': {
+        'title': 'AIRMAX',
         'link': 'https://player.vimeo.com/video/569872956?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0',
-        'pic': 'WOMSH.gif',
-        'picSteady': 'WOMSH.jpg'
+        'pic': 'AIRMAX.gif',
+        'picSteady': 'AIRMAX.jpg'
     }
 }

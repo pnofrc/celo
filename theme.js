@@ -27,8 +27,8 @@ function light() {
     document.body.style.setProperty(' --playerOn', 'rgba(0,0,0, 0.3)');
     document.body.style.setProperty('--invert', '1');
     document.body.style.setProperty('--invert2', '0');
-    document.body.style.setProperty('--controls', 'orange')
-    document.body.style.setProperty('--active', 'red')
+    document.body.style.setProperty('--controls', 'red')
+    document.body.style.setProperty('--active', 'orange')
 
 
     document.body.style.setProperty('--shadowSun', 'rgba(255, 160, 60, 0.85)');

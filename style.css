@@ -327,6 +327,10 @@ br {
     color: var(--toggle);
 }
 
+#textSrc p {
+    width: 50%;
+}
+
 #textSrc a,
 #textSrc a:visited {
     color: var(--selectedOrbit);
@@ -347,9 +351,9 @@ iframe {
     display: block;
     background-color: transparent;
     color: var(--toggle);
-    width: 7%;
-    right: 2%;
     font-size: 4em;
+    right: 3%;
+    padding: 1%;
 }
 
 #closePlayer:hover {
@@ -1292,6 +1296,8 @@ h1 {
     }
     #hello i {
         text-align: right
+    }    #textSrc p {
+        width: 100%;
     }
 }
 
@@ -1310,9 +1316,8 @@ h1 {
     #toggle-fullscreen {
         right: 24%;
     }
-    #closePlayer {
-        width: 15%;
-        height: 10%;
+   #textSrc p {
+        width: 100%;
     }
 }
 
@@ -1332,6 +1337,8 @@ h1 {
     }
     #toggle-fullscreen {
         right: 6em;
+    }    #textSrc p {
+        width: 100%;
     }
 }
 
@@ -1345,9 +1352,8 @@ h1 {
     #hello i {
         text-align: right
     }
-    #closePlayer {
-        width: 15%;
-        height: 10%;
+   #textSrc p {
+        width: 100%;
     }
 }
 
@@ -1363,9 +1369,9 @@ h1 {
     #hello i {
         text-align: right
     }
-    #closePlayer {
-        width: 15%;
-        height: 10%;
+
+    #textSrc p {
+        width: 100%;
     }
 }
 
@@ -1380,6 +1386,10 @@ h1 {
         bottom: 1%;
         padding: 1%;
         right: 0;
+    }
+
+    #textSrc p {
+        width: 100%;
     }
 }
 
@@ -1434,9 +1444,9 @@ h1 {
         /* width: 15%; */
         text-align: left;
     }
-    #closePlayer {
-        width: 10%;
-        height: 6%;
+
+    #textSrc p {
+        width: 50%;
     }
 }
 
