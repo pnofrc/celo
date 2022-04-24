@@ -118,14 +118,15 @@ $(window).load(function() {
             $("canvas").css("opacity", "0.3")
 
             $("#antiplayer").fadeIn()
+            $("#closePlayerBlack").fadeIn()
             dude.speed = 0
             app.ticker.stop()
             $("#hello").fadeOut()
             $("#player p").append(icon[2])
-            document.getElementById("closePlayer").addEventListener("click", function() {
+            document.getElementById("closePlayerBlack").addEventListener("click", function() {
                 $("#player").fadeOut()
                 $("#antiplayer").fadeOut()
-                document.querySelector("iframe").src = '';
+                document.querySelector("iframe").src = ' ';
                 dude.speed = 1
                 let avoid = document.getElementById("player")["innerText"].toString();
                 console.log(avoid)

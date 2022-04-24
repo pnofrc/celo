@@ -53,3 +53,8 @@ var assets = {
         'picSteady': 'AIRMAX.jpg'
     }
 }
+
+// listAsset = []
+// for(let n=0;n<9;n++){listAsset.push(Object.values(assets)[n]['link'] )}
+// console.log(list = Object.keys(assets).splice(1,9))
+// console.log(listAsset)

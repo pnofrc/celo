@@ -19,14 +19,16 @@
         }
         
         #player,
-        #antiplayer {
+        #antiplayer,
+        #closePlayer {
             top: 0;
+            display: none;
         }
         
         #player p {
             font-size: 40px;
             line-height: 0;
-            margin-top: -20px;
+            margin-top: 40px;
             text-align: center;
             -webkit-text-stroke-width: 1px;
             -webkit-text-stroke-color: var(--toggle);
@@ -36,6 +38,7 @@
             position: fixed;
             top: 0;
         }
+
     </style>
 
 
@@ -54,10 +57,10 @@
 
     <div id="player">
         <p></p>
-        <span id="closePlayer">&#8999;</span>
+        <span id="closePlayerBlack">&#8999;</span>
         <iframe id="playerSrc" src="" frameborder="0" allow="fullscreen;" color="#0f0" allowfullscreen></iframe>
     </div>
-    <script src="jquery.min.jsm.js"></script>
+    <script src="../jquery.min.jsm.js"></script>
     <script src="remains.js" async defer></script>
     <script src="../theme.js" async defer></script>
 

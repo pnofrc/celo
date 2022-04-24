@@ -24,10 +24,11 @@
 
     <div id="welcome"><p>Welcome.<br>Double click on planets or on the films' titles to watch the videos!</p><button id="welcomeButton">Enter</button></div>
 
-
+    <div id="coverBack"></div>
     <div id="animationResp">
-        <img src="roll.png" alt="Rolling">
-        <span>ROTATE THE DEVICE!</span></div>
+        <img src="./assets/roll.png" alt="Rolling">
+        <p>ROTATE THE DEVICE!<br>OR CHANGE THE BROWSER IF YOU ARE FROM INSTAGRAM!<button id="closeSuggestion">CLOSE</button></p>
+    </div>
 
     <span id="hello">Marco Celotti,<br><i>Celo.</i></span>
 
@@ -36,7 +37,6 @@
 
         <a id="toggle-data" id="data"><i class="icon-data"></i>Film</a>
         <a id="toggle-controls"><i class="icon-controls"></i></a>
-        <!-- <a id="toggle-info"><span onclick="alert('Welcome! Click and double click the planets or the film menu!')">Info</span></a> -->
         <a id='toggle-fullscreen'>&#10023; Fullscreen</a>
     </div>
     <div id="data">
@@ -51,32 +51,22 @@
         <a class="neptune" title=""></a>
     </div>
 
-    <!-- <div id="controls">
-
-        <label id="toggle">
-
-        </label>
-
-    </div> -->
-
-    <div id="player">
-        <div id="closePlayer">&#8999;</div>
-       <iframe id="playerSrc" src="" frameborder="0" allow="fullscreen;" color="#0f0" allowfullscreen></iframe>
-        <div id="textSrc"></div>
-    </div>
-
-
 
     <div id="universe" class="scale-stretched">
         <div id="galaxy">
 
             <div id="comet">
                 <a rel="noreferrer" href="https://instagram.com/milanosulset" target="_blank">
-                    <img src="comet.png" alt=""></a>
+                    <img src="./assets/comet.png" alt=""></a>
+            </div>
+
+            <div id="spacecraft">
+                <a rel="noreferrer" href="https://instagram.com/marco.celotti/" target="_blank">
+                    <img src="./assets/spacecraft.png" alt=""></a>
             </div>
 
             <div id="blackhole">
-                <img src="Black_Hole.webp" alt="hyperlink in a blackhole shape">
+                <img src="./assets/Black_Hole.webp" alt="hyperlink in a blackhole shape">
             </div>
 
 
