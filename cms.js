@@ -48,7 +48,7 @@ var assets = {
     },
     'Airmax': {
         'title': 'AIRMAX',
-        'link': 'https://player.vimeo.com/video/569872956?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0',
+        'link': 'https://player.vimeo.com/video/694811987?h=043c2aac46&title=0&byline=0&portrait=0&sidedock=0',
         'pic': 'AIRMAX.gif',
         'picSteady': 'AIRMAX.jpg'
     }
