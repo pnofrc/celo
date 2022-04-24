@@ -28,8 +28,7 @@ for n in lista:
 
 <body>
     <div id="navbar">
-
-        <a id="toggle-data" id="data"><i class="icon-data"></i>Film</a>
+    
         <a id="toggle-controls"><i class="icon-controls"></i></a>
         <!-- <a id="toggle-info"><span onclick="alert('Welcome! Click and double click the planets or the film menu!')">Info</span></a> -->
         <a id='toggle-fullscreen'>&#10023; Fullscreen</a>
