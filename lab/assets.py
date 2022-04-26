@@ -17,7 +17,7 @@ for n in lista:
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>MARCO CELOTTI PORTFOLIO</title>
+    <title>{n}</title>
     <meta property="og:image" content="http://www.marcocelotti.com/screen.jpg">
 
     <meta name="description" content={n}>
@@ -28,7 +28,7 @@ for n in lista:
 
 <body>
     <div id="navbar">
-    
+
         <a id="toggle-controls"><i class="icon-controls"></i></a>
         <!-- <a id="toggle-info"><span onclick="alert('Welcome! Click and double click the planets or the film menu!')">Info</span></a> -->
         <a id='toggle-fullscreen'>&#10023; Fullscreen</a>
